@@ -1,2 +1,2 @@
-# pp_playground
-# pp_playground
+# Primeiros passos em openMP 
+
