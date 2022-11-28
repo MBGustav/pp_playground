@@ -1,2 +1,6 @@
 /CUDA/*
 /.ipynb_checkpoints/*
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/settings.json
+MPI/src/build/Debug/01_helloMPI.o
