@@ -32,7 +32,8 @@ int julia( int x, int y, int DIM) {
     return 1;
 }
 
-#ifdef SERIAL
+// #ifdef SERIAL
+
 void JuliaFilter( unsigned char *ptr, int DIM ){
     for (int y=0; y<DIM; y++) {
         for (int x=0; x<DIM; x++) {
@@ -45,7 +46,10 @@ void JuliaFilter( unsigned char *ptr, int DIM ){
         }
     }
  }
-#endif
+
+
+// #endif
+
 
 #ifdef OPENMP
 void JuliaFilter( unsigned char *ptr, int DIM ){
