@@ -13,7 +13,6 @@ int data_race(auto policy, std::vector<int> v){
     std::for_each(policy, v.begin(), v.end(), [&](int i){
         sum+= i;
     });
-    //# std::sort(policy, v.begin(), v.end());
     return sum;    
 }
 
