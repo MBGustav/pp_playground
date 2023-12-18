@@ -2,15 +2,24 @@
 #define __CUDA_COMMON_H__
 
 
-
 #include <iostream>
 #include <fstream>
 #include <cstdint>
 #include <string>
 
 //GPU PARAMETERS
+#define MINIMUM_DISPLAY (6)
+
+
+#ifndef Thread_x
+#define Thread_x (1<<5)
+#endif
+#ifndef Thread_y
+#define Thread_y (1<<5)
+#endif
+
 #ifndef num_threads
-#define num_threads (1024)
+#define num_threads (Thread_x * Thread_y)
 #endif
 
 
@@ -35,10 +44,13 @@
 
 #define HPL_PTR(ptr_, al_) ((((size_t)(ptr_) + (al_)-1) / (al_)) * (al_))
 
+// #define MALLOC(x) (data_t *)mkl_malloc((x), 64)
+#define MALLOC(x, size) x = (data_t*)malloc((size) * sizeof(size))
+
 // Setting two cases: transposed and non-transposed ?
 // TODO: Is there a way to use for both cases  -> taking into consideration performance..
 #define idx_matrix(i, j, ld) (((j) * (ld)) + (i))
-#define idx_matrix_transp(i, j, ld) (((i) * (ld)) + (j))
+#define idx_matrix_trp(i, j, ld, transposed) ((transposed) ? ((j) * (ld) + (i)) : ((i) * (ld) + (j)))
 
 // PADDING CONFIGURATION -> check for GPU
 #if defined(PAD_LD)
@@ -54,8 +66,10 @@ static inline int getld(int x) {
 #else
 static inline int getld(int x) { return x; }
 #endif
-
 //=====================================================  
+
+
+
 
 // GPU ERROR CHECKER
 inline void check_last_error ()
@@ -69,7 +83,24 @@ inline void check_last_error ()
 }
 
 
+
+
+
+
 inline uint64_t sdiv (uint64_t a, uint64_t b){return (a+b-1)/b;}
+
+typedef enum ChangeHandler{
+    Equal,
+    ChangeOnHost,
+    ChangeOnDevice
+}ChangeHandler;
+
+typedef enum OffloadSelect
+{
+    CPU,
+    GPU_01,
+    GPU_02
+}OffloadSelect;
 
 
 // GPU TIMER
