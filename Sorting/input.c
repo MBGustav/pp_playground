@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define FILENAME ("input.txt")
+#define FILENAME ("bin/input.in")
 #define SEED (777)
 #define MAX_ELEM (1<<20)
 
@@ -22,8 +22,9 @@ void write_inputs(int nsamples)
 	data.length = nsamples;
 	FILE *f = fopen(FILENAME, "wb");
 
+	#pragma omp parallel for
 	for(int i = 0;i < nsamples; i++){
-		data.data[i] = (int) rand();
+		data.data[i] = (int) rand() / 10000;
 	}
 	
 	if(fwrite(&data, sizeof(int), 1,f)<=0) printf("erro");
@@ -42,7 +43,6 @@ int main(int argc, char **argv)
 	{
 		printf("Usage : ./input <Nr of values>\n");
 		printf("Generating with:  %i\n", MAX_ELEM);	
-
 	}
 	if(argc == 2)
 		input = atoi(argv[1]);

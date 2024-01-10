@@ -5,10 +5,6 @@
 #include <cstdint>
 #include <string>
 
-#ifndef NumThreads
-#define NumThreads (256)
-#endif
-
 
 uint64_t sdiv (uint64_t a, uint64_t b) {
     return (a+b-1)/b;
