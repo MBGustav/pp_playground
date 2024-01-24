@@ -2,6 +2,7 @@
 #define __CUDA_COMMON_H__
 
 
+#include <cuda_runtime.h>
 #include <iostream>
 #include <fstream>
 #include <cstdint>
