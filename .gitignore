@@ -3,3 +3,11 @@
 **/.vscode/**
 **/.o
 **/build/**
+**/bin/**
+
+Sorting/report/report.nsys-rep
+Sorting/report/report.sqlite
+
+
+GameOfLife/bin/**
+GameOfLife/output/**

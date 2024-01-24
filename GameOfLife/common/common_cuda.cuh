@@ -17,7 +17,7 @@ constexpr bool isPowerOfTwo(const int number){
 }
 
 
-inline int matrix_idx(int x, int y)
+int matrix_idx(int x, int y)
 {
     // Better for GPU and require less operations
     if constexpr (isPowerOfTwo(Width) && isPowerOfTwo(Height))

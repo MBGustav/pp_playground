@@ -5,8 +5,8 @@ CC = gcc
 NVCC = nvcc
 
 # COMPILE FLAGS
-CXX_FLAGS  = -Wall -Werror
-NVXX_FLAGS =
+CXX_FLAGS  = -g -Wall -Werror
+NVXX_FLAGS = -g -G
 
 CXX_VECTORIZATION = $(CXX_FLAGS) -O3  -fopenmp -mavx
 
@@ -64,5 +64,8 @@ openMP_run: openMP
 cuda_v0_run: cuda_v0
 	$(out_guard)
 	./$(BINARY_DIR)/$(CUDA01).out $(ARGS) > $(OUTPUT_DIR)/$<.txt
+
+clean:
+	rm -rf $(OUTPUT_DIR)/* $(BINARY_DIR)/*
 
 
