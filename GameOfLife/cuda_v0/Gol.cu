@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "common_cuda.cuh"
+#include "cuda_kernel.cuh"
 
 constexpr int w = Width;
 constexpr int h = Height;
