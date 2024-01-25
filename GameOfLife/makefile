@@ -18,11 +18,10 @@ OPT_FLAGS =
 # FOLDERS
 SERIAL = serial
 OPENMP = openMP
-CUDA01 = cuda_v0
 
 INCLUDE_DIR = ./common
-BINARY_DIR = ./bin
-OUTPUT_DIR = ./output
+BINARY_DIR  = ./bin
+OUTPUT_DIR  = ./output
 
 bin_guard=@mkdir -p $(BINARY_DIR)
 out_guard=@mkdir -p $(OUTPUT_DIR)
@@ -33,10 +32,12 @@ ARGS = 100
 
 
 .PHONY: all
-all: openMP cuda_v0 serial
+all: openMP cuda_v0 cuda_v1 serial
+run_all: serial_run openMP_run cuda_v0_run
 
 .PHONY: serial
 serial: 
+	@echo $(PROJECT_FILES)
 	$(bin_guard)
 	$(CC) $(CXX_FLAGS) -I $(INCLUDE_DIR) $(OPT_FLAGS) $(SERIAL)/$(PROJECT).c -o $(BINARY_DIR)/$(SERIAL).out
 
@@ -48,10 +49,13 @@ openMP:
 .PHONY: cuda_v0
 cuda_v0: 
 	$(bin_guard)
-	$(NVCC) $(NVXX_FLAGS) -I $(INCLUDE_DIR) $(OPT_FLAGS) $(CUDA01)/$(PROJECT).cu -o $(BINARY_DIR)/$(CUDA01).out
+	$(NVCC) $(NVXX_FLAGS) -I $(INCLUDE_DIR) $(OPT_FLAGS) $@/$(PROJECT).cu -o $(BINARY_DIR)/$@.out
 
+.PHONY: cuda_v1
+cuda_v1: 
+	$(bin_guard)
+	$(NVCC) $(NVXX_FLAGS) -I $(INCLUDE_DIR) $(OPT_FLAGS) $@/$(PROJECT).cu -o $(BINARY_DIR)/$@.out
 
-run_all: serial_run openMP_run cuda_v0_run
 
 serial_run: serial 
 	$(out_guard)
@@ -63,7 +67,11 @@ openMP_run: openMP
 
 cuda_v0_run: cuda_v0
 	$(out_guard)
-	./$(BINARY_DIR)/$(CUDA01).out $(ARGS) > $(OUTPUT_DIR)/$<.txt
+	./$(BINARY_DIR)/$<.out $(ARGS) > $(OUTPUT_DIR)/$<.txt
+
+cuda_v1_run: cuda_v1
+	$(out_guard)
+	./$(BINARY_DIR)/$<.out $(ARGS) > $(OUTPUT_DIR)/$<.txt
 
 clean:
 	rm -rf $(OUTPUT_DIR)/* $(BINARY_DIR)/*

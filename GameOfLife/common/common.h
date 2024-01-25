@@ -15,11 +15,11 @@
 
 
 #ifndef Height
-#define Height (40)
+#define Height (1<< 10)
 #endif
 
 #ifndef Width
-#define Width  (40)
+#define Width  (1<< 10)
 #endif
 
 #ifndef THREADS_Y
