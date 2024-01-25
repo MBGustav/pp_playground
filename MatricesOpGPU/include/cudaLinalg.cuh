@@ -1,8 +1,8 @@
 #ifndef _CUDA_LINALG_H_
 #define _CUDA_LINALG_H_
 
-#include "cuda_common.h"
-#include "cudaMatrix.h"
+#include "cuda_common.cuh"
+#include "cudaMatrix.cuh"
 #include <vector>
 
 

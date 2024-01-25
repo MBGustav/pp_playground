@@ -4,7 +4,7 @@
 #include <iomanip>
 #include <iostream>
 #include <cuda_runtime.h>
-#include "cuda_common.h"
+#include "cuda_common.cuh"
 
 //this is to reduce compiler c++ overhead
 #ifndef data_t
@@ -13,7 +13,9 @@
 
 
 #define MAX_DISPLAY_MATRIX (6)
+
 /*Enum to deal with modifications between Host <-> Device*/
+typedef enum ChangeHandler{Equal, ChangeOnHost, ChangeOnDevice}ChangeHandler;
 
 
 // template<typename TT>
@@ -21,6 +23,7 @@ class cudaMatrix
 {
 
 private:
+// public:
     // Matrix Parameters:
     int _row, _col,_ld;
     bool is_transposed;
@@ -40,46 +43,49 @@ private:
 public:
     // Show top left matrix
 
-    void display() const;
+    void display();
 
     // Returns row value
-    __host__ __device__ int getRow() const;
+    __host__ int getRow() const;
 
     // Returns Col value 
-    __host__ __device__ int getCol() const;
+    __host__ int getCol() const;
+    
     
     // Returns Leading Dimension width
-    __host__ __device__ int getLd() const;
+    __host__ int get_ld() const;
 
     // Total Amount of (real) data
-    __host__ __device__ int getSize() const;
+    __host__ int getSize() const;
 
     __host__ size_t MemSize( bool ) const;
 
     // device acess position
-    __host__ __device__ data_t& at(int x, int y);
-    __device__ __host__ data_t& const_at(int x, int y) const;        
+    __host__ __device__  data_t& at(int x, int y);
+    __host__ data_t& const_at(int x, int y) const;        
 
-    __host__ data_t& getDataGpu();
-
+    // __host__ data_t* dataGPU();
+    __host__ data_t* dataGPU();
     __host__ data_t&  data();
     
-    void SynchronizeValues();
+    __host__ void SynchronizeValues();
 
     // Generate a random matrix On Host Only 
-    void randMatrix(data_t lower_bound, data_t upper_bound, bool Synchronize);
+    __host__ void randMatrix(data_t lower_bound, data_t upper_bound, bool Synchronize);
 
     // Transposed forced in memory
-    void transposeInPlace(); 
+    __host__ void transposeInPlace(); 
 
     // Creates another matrix tranposing
     cudaMatrix transpose();
 
+    // Notifies about changes in its values
+    void changeOccurred(enum ChangeHandler);
 
     // Matrix Constructors and Destructors
-    cudaMatrix(int row, int col);
-    cudaMatrix();
-    ~cudaMatrix();
+    __host__ cudaMatrix(int row, int col);
+    __host__ cudaMatrix();
+    __host__ ~cudaMatrix();
 };
 
 

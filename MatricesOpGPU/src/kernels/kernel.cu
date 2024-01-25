@@ -1,13 +1,16 @@
 #include <cassert>
-#include <cuda_runtime.h>
+// #include <cuda_runtime.h>
 
-#include "cudaMatrix.h"
+#include "cudaMatrix.cuh"
 
 
-
+__global__ void kernel() {
+    int tid = threadIdx.x;
+    printf("%d\n",(tid));
+}
 namespace gpuLinalg{
 
-    __global__ void MatrixMultiplicationOnGPU(cudaMatrix &A, cudaMatrix &B, cudaMatrix &C, data_t alpha, data_t beta)
+    __global__ void MatrixMultiplicationOnGPU(data_t *A, data_t *B, data_t *C, int m, int k, int n, int ldA, int ldB, int ldC, data_t alpha, data_t beta)
     {
         // Local Range (memo-access)
         const int tx = threadIdx.x;
@@ -16,42 +19,54 @@ namespace gpuLinalg{
         //global range
         int gx = tx + blockDim.x * blockIdx.x;
         int gy = ty + blockDim.y * blockIdx.y;
-
         
-        __shared__ data_t SharedMemoA[blockDim.x][blockDim.y];
-        __shared__ data_t SharedMemoB[blockDim.x][blockDim.y];
-        __shared__ data_t SharedMemoC[blockDim.x][blockDim.y];
+        if(gx > m || gx > n) return;
+        
+        __shared__ data_t SharedMemoA[BLOCK_SIZE][BLOCK_SIZE];
+        __shared__ data_t SharedMemoB[BLOCK_SIZE][BLOCK_SIZE];
 
+
+        // if(gx == 0 && gy == 0) {
+        //     printf("Matrix on GPU \n");
+        //     for(int i = 0; i < m; i++){
+        //         for(int j = 0; j < m; j++)
+        //             printf("%f ",A[idx_matrix(ldA, i,j)]);
+        //         printf("\n");
+        //     }
+        //     printf("\n\n");
+
+        // }
 
         //copy from global to local
-        SharedMemo[tx][ty] = A.at(gx, gy);
-        SharedMemo[tx][ty] = B.at(gx, gy);
+        data_t acc = 0.0f;
+    for (int stride_k = 0; stride_k < k; stride_k += BLOCK_SIZE)
+    {
+        // Carregar submatriz da matriz A para a memória local
+        SharedMemoA[ty][tx] = A[idx_matrix(ldA, gx, stride_k + tx)];
 
+        // Carregar submatriz da matriz B para a memória local com stride
+        SharedMemoB[ty][tx] = B[idx_matrix(ldB, stride_k + ty, gy)];
+
+        // Sincronizar threads antes de calcular a próxima submatriz
         __syncthreads();
 
-        // Time to multiply
-        for(int stride_i = gx; stride_i < A.getRow(); stride_i+=gridDim.x*blockDim.x)
-        for(int stride_j = gy; stride_j < B.getCol(); stride_j+=gridDim.y*blockDim.y)
+        // Computar o produto da submatriz
+        for (int i = 0; i < BLOCK_SIZE; ++i)
         {
-            data_t acc = 0.0f;
-            for(int kk=0; kk < blockDim.x; kk++)
-                // acc += A(i, k) * B(k, j)
-                acc += SharedMemoA[tx][kk] * SharedMemo[kk][ty];
-            SharedMemoC[tx][ty] = alpha * acc;
+            acc += SharedMemoA[ty][i] * SharedMemoB[i][tx];
         }
 
+        // Sincronizar threads antes de carregar a próxima submatriz
         __syncthreads();
-
-        C.at(gx.gy) = C.at(gx,gy) * beta + SharedMemoC[tx][ty];
-        
-
-
+    }
+    C[idx_matrix(ldC,gx, gy)] = alpha * acc + beta * C[idx_matrix(ldC,gx, gy)];
+        // __syncthreads();
     }
 } /*namespace linalg*/
 
 
 // template <typename T>
-// __global__ void MatrixMultiplicationWithStride(cudaMatrix A, cudaMatrix B, cudaMatrix C, data_t alpha, data_t beta)
+// __global__ void MatrixMultiplicationWithStride(data_t A, data_t B, data_t C, data_t alpha, data_t beta)
 // {
 //     const int tx = threadIdx.x;
 //     const int ty = threadIdx.y;

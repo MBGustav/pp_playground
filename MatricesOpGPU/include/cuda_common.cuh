@@ -13,11 +13,13 @@
 
 
 #ifndef Thread_x
-#define Thread_x (1<<5)
+#define Thread_x (32)
 #endif
 #ifndef Thread_y
-#define Thread_y (1<<5)
+#define Thread_y (32)
 #endif
+
+#define BLOCK_SIZE 32
 
 #ifndef num_threads
 #define num_threads (Thread_x * Thread_y)
@@ -50,12 +52,12 @@
 
 // Setting two cases: transposed and non-transposed ?
 // TODO: Is there a way to use for both cases  -> taking into consideration performance..
-#define idx_matrix(i, j, ld) (((j) * (ld)) + (i))
+#define idx_matrix(ld, i, j) (((j) * (ld)) + (i))
 #define idx_matrix_trp(i, j, ld, transposed) ((transposed) ? ((j) * (ld) + (i)) : ((i) * (ld) + (j)))
 
 // PADDING CONFIGURATION -> check for GPU
 #if defined(PAD_LD)
-static inline int getld(int x) {
+static inline int ld_padding(int x) {
   int ld;
   ld = HPL_PTR(x, LD_ALIGN); // Rule 1
   if (ld - LD_BIAS >= x)
@@ -65,7 +67,7 @@ static inline int getld(int x) {
   return ld;
 }
 #else
-static inline int getld(int x) { return x; }
+static inline int ld_padding(int x) { return x; }
 #endif
 //=====================================================  
 
@@ -83,18 +85,8 @@ inline void check_last_error ()
     }
 }
 
-
-
-
-
-
 inline uint64_t sdiv (uint64_t a, uint64_t b){return (a+b-1)/b;}
 
-typedef enum ChangeHandler{
-    Equal,
-    ChangeOnHost,
-    ChangeOnDevice
-}ChangeHandler;
 
 typedef enum OffloadSelect
 {

@@ -1,25 +1,27 @@
 #include <iostream>
-#include "cudaMatrix.h"
+#include "cudaMatrix.cuh"
 
 // template<typename TT>
-void cudaMatrix::allocate(int row,int col)
+__host__ void cudaMatrix::allocate(int row,int col)
 {
     this->_row = row;
     this->_col = col;
     // to make padding efficient
-    this->_ld  = getld(col);
+    this->_ld  = ld_padding(col);
 
     // TODO: should I implement here te Async Memory, or alloc through the op? No..
     
     MALLOC(host_data, this->MemSize(true));
+
     cudaMalloc(&dev_data, this->MemSize(true));
+
     check_last_error();
     is_transposed=false;
     Change = Equal;
 }
 
 // template<typename TT>
-void cudaMatrix::deallocate()
+__host__ void cudaMatrix::deallocate()
 {
     free(host_data);
     cudaFree(dev_data);
@@ -27,17 +29,18 @@ void cudaMatrix::deallocate()
 }
 
 // template<typename TT>
-cudaMatrix::cudaMatrix() : host_data{NULL}, dev_data{NULL}{}
+__host__ cudaMatrix::cudaMatrix() : host_data{NULL}, dev_data{NULL}{}
 
 // template<typename TT>
-cudaMatrix::cudaMatrix(int row, int col) : _row(row), _col(col){allocate(row, col);}
+__host__ cudaMatrix::cudaMatrix(int row, int col) : _row(row), _col(col){allocate(row, col);}
 
 // template<typename TT>
-cudaMatrix::~cudaMatrix() {deallocate();}
+__host__ cudaMatrix::~cudaMatrix() {deallocate();}
 
 // template<typename TT>
-void cudaMatrix::display() const
+__host__ void cudaMatrix::display()
 {
+    SynchronizeValues();
     std::cout << " showing top left from Matrix:\n";
     for (int row = 0; row < std::min(MAX_DISPLAY_MATRIX, this->getRow()); row++) {
     for (int col = 0; col < std::min(MAX_DISPLAY_MATRIX, this->getCol()); col++) {
@@ -49,7 +52,7 @@ void cudaMatrix::display() const
       std::cout << std::fixed << std::setprecision(2);
 
       // Print the results
-      std::cout << std::setw(8) << this->const_at(col, row) << " ";
+      std::cout << std::setw(8) << this->at(col, row) << " ";
 
       // Restore the output format of cout
       std::cout.copyfmt(oldState);
@@ -59,28 +62,35 @@ void cudaMatrix::display() const
 }
 
 // template<typename TT>
-__device__ __host__ data_t& cudaMatrix::data()
+__host__ data_t& cudaMatrix::data()
 {
-#ifdef __CUDA_ARCH__
-    return *dev_data;
-#else
     return *host_data;
-#endif
 }
 
+
+// __host__ data_t* cudaMatrix::dataGPU()
+// {
+//     return dev_data;
+// }
+
+__host__ data_t* cudaMatrix::dataGPU()
+{
+    return (this->dev_data);
+}
+
+
 // template<typename TT>
-__device__ __host__ data_t& cudaMatrix::at(int x, int y)
+__host__ data_t& cudaMatrix::at(int x, int y)
 {
 #ifdef __CUDA_ARCH__
     return dev_data[idx_matrix(_ld, x, y)];
 #else
     return host_data[idx_matrix(_ld, x, y)];
-    Change=ChangeOnHost;// is this the best way ? 
 #endif
 }
 
 // template<typename TT>
-__device__ __host__ data_t& cudaMatrix::const_at(int x, int y) const
+__host__ data_t& cudaMatrix::const_at(int x, int y) const
 {
 #ifdef __CUDA_ARCH__
     return dev_data[idx_matrix(_ld, x, y)];
@@ -89,46 +99,37 @@ __device__ __host__ data_t& cudaMatrix::const_at(int x, int y) const
 #endif
 }
 
-
-// template<typename TT>
-bool cudaMatrix::TransferData(cudaMemcpyKind kind)
-{   
-    cudaMemcpy(dev_data, host_data, this->MemSize(true), kind);
-    check_last_error();
-    Change = Equal;
-    return true;
-}
 
 // Returns row value
 // template<typename TT>
-int cudaMatrix::getRow() const { return this->_row;}
+__host__ int cudaMatrix::getRow() const { return this->_row;}
 
 // Returns Col value 
 // template<typename TT>
-int cudaMatrix::getCol() const { return this->_col;}
+__host__ int cudaMatrix::getCol() const { return this->_col;}
 
 // Returns Leading Dimension width
 // template<typename TT>
-int cudaMatrix::getLd() const { return this->_ld;}
+__host__ int cudaMatrix::get_ld() const { return this->_ld;}
 
 // template<typename TT>
-int cudaMatrix::getSize() const { return this->getCol() * this->getRow();}
+__host__ int cudaMatrix::getSize() const { return this->getCol() * this->getRow();}
 
 // template<typename TT>
-size_t cudaMatrix::MemSize(bool bin=false) const{
-    return getLd() * getRow() * (bin ? sizeof(data_t) : 1 );
+__host__ size_t cudaMatrix::MemSize(bool bin=false) const{
+    return get_ld() * getRow() * (bin ? sizeof(data_t) : 1 );
 }
 
 //This case really forces to transpose data
 // template<typename TT>
-void cudaMatrix::transposeInPlace()
+__host__ void cudaMatrix::transposeInPlace()
 {
     
 }
 
 // returns a matrix with the same configuration transposed
 // template<typename TT>
-cudaMatrix cudaMatrix::transpose()
+__host__ cudaMatrix cudaMatrix::transpose()
 {
     cudaMatrix result(this->getCol(), this->getRow());
 
@@ -150,30 +151,50 @@ cudaMatrix cudaMatrix::transpose()
         input: Synchronize [bool]
     Synch is used to sync between GPU and CPU
 */      
-void cudaMatrix::randMatrix(data_t lower_bound, data_t upper_bound, bool Synchronize = true)
+__host__ void cudaMatrix::randMatrix(data_t lower_bound, data_t upper_bound, bool Synchronize = true)
 {
-    int ld = getLd();
+    Change = ChangeOnHost;
+    int ld = get_ld();
     for(int ii=0; ii< getRow(); ii++)
     for(int jj=0; jj< getCol(); jj++)
         this->at(ii,jj) = 
             static_cast<data_t>(rand()) / 
             static_cast<data_t>(RAND_MAX / (upper_bound - lower_bound)) + lower_bound ;
 
-    Change = Synchronize ? Equal : ChangeOnHost;
-
     if(Synchronize) SynchronizeValues();
 }
 
+void cudaMatrix::changeOccurred(ChangeHandler Status)
+{
+    this->Change = Status;
+}
+
+
 // template<typename TT>
-void cudaMatrix::SynchronizeValues()
+__host__ bool cudaMatrix::TransferData(cudaMemcpyKind kind)
+{   
+    if(kind == cudaMemcpyHostToDevice)
+        cudaMemcpy(dev_data, host_data, this->MemSize(true), kind);
+    else
+        cudaMemcpy(host_data, dev_data, this->MemSize(true), kind);
+    
+    check_last_error();
+    Change = Equal;
+    return true;
+}
+
+// template<typename TT>
+__host__ void cudaMatrix::SynchronizeValues()
 {
     bool sync = false;
     switch(Change){
         case ChangeOnHost: {
+            std::cout<< "syn H-> D";
             sync = TransferData(cudaMemcpyHostToDevice);break;
         }
         case ChangeOnDevice : {
-            sync = TransferData(cudaMemcpyDeviceToHost);break;
+            std::cout<< "syn D-> H";
+            sync = TransferData(cudaMemcpyDeviceToHost);break;              
         }
         // default : data already sync. 
     }

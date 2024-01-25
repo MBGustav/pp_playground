@@ -1,16 +1,29 @@
+# src/CMakeLists.txt
 
-set(LIB_NAME cudaMatrix)
-# Source files
-file(GLOB SOURCES 
-    "${CMAKE_CURRENT_LIST_DIR}/*.cpp" 
-    "${CMAKE_CURRENT_LIST_DIR}/*.cu"
+# Include directories
+enable_language("CUDA")
+set(library_name cudaMatrixLib)
+
+set(
+    CUDA_NVCC_FLAGS
+    ${CUDA_NVCC_FLAGS}
+    "-O3"
 )
 
+set(lib_sources 
+    "${PROJECT_SOURCE_DIR}/src/cudaMatrix.cu"
+    "${PROJECT_SOURCE_DIR}/src/cudaLinalg.cu"
+)
 
-# Set CUDA architecture flags
-# set_property(TARGET ${LIB_NAME} 
-# PROPERTY CUDA_ARCHITECTURES 35 50 60 70 75
-# )
+include_directories(
+    kernels
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CUDA_INCLUDE_DIRS}
+    ${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}
+)
 
-# Create library
-add_library(${LIB_NAME} ${SOURCES})
+# Create cudaMatrixLib
+add_library(${library_name} ${lib_sources})
+
+# Join with source
+target_sources(${library_name} PRIVATE ${lib_sources})

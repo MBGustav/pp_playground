@@ -25,28 +25,24 @@ Wrapper_matmul01(cudaMatrix &A,cudaMatrix &B,cudaMatrix &C,double alpha, double 
 
 // Most simple, due to the quantity items
 Wrapper_matmul01(data_t *A,data_t *B,data_t *C,double alpha, double beta,bool transA,bool transB)
-{
+{}
 
 
+// __global__ kernel_matmul_simple(data_t *A,data_t *B,data_t *C,double alpha, double beta,bool transA,bool transB, int kk)
+// {
+// 	data_t *Av = A.getDataGPU();
+// 	data_t *Bv = A.getDataGPU();
+// 	data_t *Cv = A.getDataGPU();
 
-}
+// 	int i = threadIdx.x + blockIdx.x * blockDim.x;
+// 	int j = threadIdx.y + blockIdx.y * blockDim.y;
 
+// 	data_t acc = 0.0f;
+// 	for(int k=0; k < kk ;k++)
+// 		acc += Av[idx_matrix_trp(i,k,transA)] * B[idx_matrix_trp(k,j,transB)];
+// 	Cv[i,j] = acc;
 
-__global__ kernel_matmul_simple(data_t *A,data_t *B,data_t *C,double alpha, double beta,bool transA,bool transB, int kk)
-{
-	data_t *Av = A.getDataGPU();
-	data_t *Bv = A.getDataGPU();
-	data_t *Cv = A.getDataGPU();
-
-	int i = threadIdx.x + blockIdx.x * blockDim.x;
-	int j = threadIdx.y + blockIdx.y * blockDim.y;
-
-	data_t acc = 0.0f;
-	for(int k=0; k < kk ;k++)
-		acc += Av[idx_matrix_trp(i,k,transA)] * B[idx_matrix_trp(k,j,transB)];
-	Cv[i,j] = acc;
-
-}
+// }
 
 
 #endif //_CUDA_KERNELS_CUH_
