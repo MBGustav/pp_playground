@@ -33,6 +33,12 @@
 #ifndef BLOCK_SIZE
 #define BLOCK_SIZE 32
 #endif 
+
+#ifndef NUM_STREAMS
+#define NUM_STREAMS 10
+#endif 
+
+
 typedef unsigned char u_char;
 
 // global parameter
@@ -78,11 +84,22 @@ void evolve_serial2D(void *universe, int w, int h)
 	u_char new_univ[Height][Width];
 	u_char (*univ)[Width] = (u_char (*)[Width]) universe;
 
+// Regras do Jogo Game of Life:
+// Qualquer célula viva com menos de dois vizinhos vivos morre de solidão.
+// Qualquer célula viva com mais de três vizinhos vivos morre de superpopulação.
+// Qualquer célula com exatamente três vizinhos vivos se torna uma célula viva.
+// Qualquer célula com dois vizinhos vivos continua no mesmo estado para a próxima geração.
+
 	for_yx {
 		u_char n = univ[(y-1+h)%h][(x-1+w)%w] + univ[(y-1+h)%h][(x  +w)%w] + univ[(y-1+h)%h][(x+1+w)%w] +
 		           univ[(y  +h)%h][(x-1+w)%w] +                              univ[(y  +h)%h][(x+1+w)%w] +
 		           univ[(y+1+h)%h][(x-1+w)%w] + univ[(y+1+h)%h][(x  +w)%w] + univ[(y+1+h)%h][(x+1+w)%w]; 
-		new_univ[y][x] = ((n | univ[y][x]) == 3);
+		if(n < 2 || n > 3)
+			new_univ[y][x] = 0;
+		if(n == 3)
+			new_univ[y][x] = 1;
+		if(n == 2)
+			new_univ[y][x] = univ[y][x];
 	}
 	for_yx univ[y][x] = new_univ[y][x];
 	// swap_pointers((void**)& univ,(void**)& new_univ);
