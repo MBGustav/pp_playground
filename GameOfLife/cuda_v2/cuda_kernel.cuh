@@ -43,7 +43,7 @@ void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
     constexpr int nx_threads= THREADS_X;
 	constexpr int ny_threads= THREADS_Y;
 	constexpr int NumStreams= NUM_STREAMS;
-	constexpr int chunk_size = _ceil(kSizeUniv, NumStreams);
+	const int chunk_size = _ceil(kSizeUniv, NumStreams);
 	cudaStream_t streams[NumStreams];
 	dim3 blocks(nx_threads, ny_threads);
 	dim3 grids(20,20);
@@ -60,30 +60,41 @@ void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
 	cudaMalloc((void**)& UniverseGPU, kBinSize);
 	cudaMalloc((void**)& NewUniverseGPU, kBinSize);
 
-	// Podemos fazer assincrono?
-	cudaMemcpy(UniverseGPU, Universe, kBinSize, cudaMemcpyHostToDevice);
+	// Podemos fazer assincrono? Sim!
+	// cudaMemcpy(UniverseGPU, Universe, kBinSize, cudaMemcpyHostToDevice);
 
 	// Criamos os Streams
 	for(int stream=0; stream < NumStreams; stream++)
 		cudaStreamCreate(&streams[stream]);
 	
-	while(NumOfGenerations--)
+	for(int Generation=0; Generation <  NumberOfGenerations; Generation++)
 	{
 		// Submetemos os dados para os streams
 		for(int stream=0; stream < NumStreams; stream++){
 			int lower = chunk_size * stream; //posicao de offset na memoria
 			int upper = min(lower + chunk_size, kSizeUniv); // Ponteiro para o final da janela
-			int width = upper - lower; 
-			
-			// cudaMemcpyAsync(UniverseGPU + lower,   // ptr. para gpu
-			// 				Universe    + lower,   // ptr. para cpu
-			// 				sizeof(u_char)*width,  // Tam. dos dados
-			// 				cudaMemcpyHostToDevice,// Sentido de copia 
-			// 				streams[stream]);	   // qual fila de stream
+			int width = upper - lower;
+
+			//Primeira Geração copiamos os dados para GPU
+			if(Generation == 0) 
+				cudaMemcpyAsync(UniverseGPU + lower,   // ptr. para gpu
+								Universe    + lower,   // ptr. para cpu
+								sizeof(u_char)*width,  // Tam. dos dados
+								cudaMemcpyHostToDevice,// Sentido de copia 
+								streams[stream]);	   // qual fila de stream
 							
 			// Emissao de Kernel <<<grid, block, Mem, #Stream>>>
 			GOLInternalKernel<<<grids, blocks, 0, streams[stream]>>>
 			(UniverseGPU + lower, NewUniverseGPU + lower);
+
+			// Ultima Geracao Copiamos para o Host
+			if(Generation == NumberOfGenerations - 1)
+				cudaMemcpyAsync(Universe    + lower,   // ptr. para cpu
+								UniverseGPU + lower,   // ptr. para gpu
+								sizeof(u_char)*width,  // Tam. dos dados
+								cudaMemcpyDeviceToHost,// Sentido de copia 
+								streams[stream]);	   // qual fila de stream
+			
 		}
 
 		// Sincronizamos os Streams (eles sao assincronos!)
@@ -109,14 +120,14 @@ void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
 	// Necessario ?
 	cudaDeviceSynchronize();
 	
+	#ifdef  _DISPLAY_GAME
 	DisplayGame(Universe);
-	
-	
+	#endif/*_DISPLAY_GAME */
 	
 	
 	// Destruimos os Streams
 	for(int stream=0; stream < NumStreams; stream++)
-		cudaStreamDestroy(&streams[stream]);
+		cudaStreamDestroy(streams[stream]);
 	
 	// Liberamos a memoria da GPU
 	cudaFree(UniverseGPU);

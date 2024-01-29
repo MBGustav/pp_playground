@@ -104,7 +104,11 @@ void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
 	//copy back to host
 	cudaMemcpy(Universe, UniverseGPU, kBinSize, cudaMemcpyDeviceToHost);
 
-    DisplayGame(Universe);
+    	
+	#ifdef  _DISPLAY_GAME
+	DisplayGame(Universe);
+	#endif/*_DISPLAY_GAME */
+	
 }
 
 

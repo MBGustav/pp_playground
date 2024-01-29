@@ -89,7 +89,7 @@ void evolve_serial2D(void *universe, int w, int h)
 // Qualquer célula viva com mais de três vizinhos vivos morre de superpopulação.
 // Qualquer célula com exatamente três vizinhos vivos se torna uma célula viva.
 // Qualquer célula com dois vizinhos vivos continua no mesmo estado para a próxima geração.
-
+    #pragma omp parallel shared(univ, new_univ) private(x,y)
 	for_yx {
 		u_char n = univ[(y-1+h)%h][(x-1+w)%w] + univ[(y-1+h)%h][(x  +w)%w] + univ[(y-1+h)%h][(x+1+w)%w] +
 		           univ[(y  +h)%h][(x-1+w)%w] +                              univ[(y  +h)%h][(x+1+w)%w] +

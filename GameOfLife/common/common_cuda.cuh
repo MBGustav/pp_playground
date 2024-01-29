@@ -16,7 +16,6 @@ constexpr bool isPowerOfTwo(const int number){
     return (number > 0) && ((number - 1) & number) == 0;
 }
 
-
 int matrix_idx(int x, int y)
 {
     // Better for GPU and require less operations

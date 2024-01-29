@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "common.h"
+#include "omp_kernel.h"
 
 const int w = Width;
 const int h = Height;
