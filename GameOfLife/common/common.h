@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <stdio.h> 
 #include <unistd.h>
+#include <sys/time.h>
+
 
 #define MIN(a,b) (((a)<(b))?(a):(b))
 #define MAX(a,b) (((a)>(b))?(a):(b))
@@ -53,6 +55,10 @@ void swap_pointers(void **ptrA, void **ptrB)
 // > Linearize to 1D Matrix
 #define idx_matrix1D(x, y) \
     (((x + Width) % Width) + ((y + Height) % Height) * Width)
+
+
+#define idx_matrix_unsafe(x, y) \
+    (((x + Width)) + ((y + Height)) * Width)
 
 
 void show2D(void *univ, int w, int h)
@@ -106,18 +112,20 @@ void evolve_serial2D(void *universe, int w, int h)
 }
 
 
-void game(void *univ, int NumGenerations)
+void game(void *univ,const int NumGenerations)
 {
 	srand(777);
 	const int h = Height;
 	const int w = Width;
-
+	int Generation = NumGenerations;
+	struct timeval begin, end; 
 	u_char (*univ2D)[Width] = (u_char (*)[Width]) univ;
 
-
 	for_xy univ2D[y][x] = rand() < RAND_MAX / 10 ? 1 : 0;
-	// for_xy univ2D[y][(x*w)%h] = y == x ? 1 : 0;
-	while (NumGenerations-- )
+
+
+	gettimeofday(&begin, NULL);
+	while (Generation--)
 	{
 		evolve_serial2D(univ, w, h);
 		#ifdef _DEBUG_PER_STEP
@@ -126,7 +134,22 @@ void game(void *univ, int NumGenerations)
 		#endif /*_DEBUG_PER_STEP*/
 	}
 
+	gettimeofday(&end, NULL);
+	long seconds = end.tv_sec - begin.tv_sec;
+    long microseconds = end.tv_usec - begin.tv_usec;
+	double time_ms = microseconds *1e-3 + seconds * 1e3;
+
+
+	FILE *file = fopen("benchmark.txt", "aw");
+	
+	fprintf(file,"serial,%i,%i, Total Time Execution, %.4lf\n",NumGenerations, 
+															w, (double) time_ms);
+	fclose(file);
+	
+
+#ifdef  _DISPLAY_GAME
 	show2D(univ2D, w, h);
+#endif/*_DISPLAY_GAME */
 }
 
 

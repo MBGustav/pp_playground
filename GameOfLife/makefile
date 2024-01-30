@@ -9,34 +9,44 @@ NSYS=nsys profile
 CXX_FLAGS  = -g -Wall -Werror
 NVXX_FLAGS = -g -G
 NSYS_FLAGS =--stats=true --force-overwrite=true
-
-
 CXX_VECTORIZATION = $(CXX_FLAGS) -O3  -fopenmp -mavx
 
-# OPTIONAL FLAGS(UNCOMMENT IF YOU WANT)
+# OPTIONAL FLAGS(UNCOMMENT IF YOU WANT FOR DEBUG)
 OPT_FLAGS =
 # OPT_FLAGS += -D_DISPLAY_GAME
 # OPT_FLAGS += -D_DEBUG_PER_STEP
 
+PROJECT = Gol
+ARGS = 100
 
 # FOLDERS
 SERIAL = serial
 OPENMP = openMP
-
 INCLUDE_DIR = ./common
 BINARY_DIR  = ./bin
 OUTPUT_DIR  = ./output
 
+# FOLDER CREATION
 bin_guard=@mkdir -p $(BINARY_DIR)
 out_guard=@mkdir -p $(OUTPUT_DIR)
 
-PROJECT = Gol
+# COMPILING PARAMETERS
+ifdef SIZE
+	OPT_FLAGS +="-DWidth=$(SIZE) -DHeight=$(SIZE)"
+endif
 
-ARGS = 100
+ifdef BLOCK_SIZE
+	OPT_FLAGS +="-DBLOCK_SIZE=$(BLOCK_SIZE)"
+endif
+
+ifdef NUM_STREAMS
+	OPT_FLAGS +="-DNUM_STREAMS=$(NUM_STREAMS)"
+endif
 
 
 .PHONY: all
 all: serial openMP cuda_v0 cuda_v1 cuda_v2
+.PHONY: run_all
 run_all: serial_run openMP_run cuda_v0_run cuda_v1_run cuda_v2_run
 
 .PHONY: serial
@@ -75,15 +85,19 @@ openMP_run: openMP
 
 cuda_v0_run: cuda_v0
 	$(out_guard)
-	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-$< ./$(BINARY_DIR)/$<.out $(ARGS) 
+	./$(BINARY_DIR)/$<.out $(ARGS)
+	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-$< ./$(BINARY_DIR)/$<.out $(ARGS) > /dev/null
 
 cuda_v1_run: cuda_v1
 	$(out_guard)
-	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-$< ./$(BINARY_DIR)/$<.out $(ARGS) 
+	./$(BINARY_DIR)/$<.out $(ARGS)
+	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-$< ./$(BINARY_DIR)/$<.out $(ARGS) > /dev/null
 
 cuda_v2_run: cuda_v2
 	$(out_guard)
-	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-$< ./$(BINARY_DIR)/$<.out $(ARGS) 
+	./$(BINARY_DIR)/$<.out $(ARGS)
+	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-$< ./$(BINARY_DIR)/$<.out $(ARGS) > /dev/null
+
 
 
 clean:

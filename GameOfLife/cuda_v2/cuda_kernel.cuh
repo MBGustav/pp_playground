@@ -30,7 +30,7 @@ E se tivermos um Universe of Life ?
 Vamos implementar um Game of Life que seja suficientemente grande!
 Usaremos streaming...
  */
-void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
+void GameOfLifeKernel(u_char *Universe,const int NumberOfGenerations)
 {
     srand(777);
     //Game parameters
@@ -48,9 +48,18 @@ void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
 	dim3 blocks(nx_threads, ny_threads);
 	dim3 grids(20,20);
 
+	const std::string label = "cuda_v2," +
+							  std::to_string(NumberOfGenerations) + "," + 
+							  std::to_string(w);
+
+	#ifdef _DISPLAY_DATA_PROFILING
+	Timer general_timer("", std::cout);
+	#else
+	std::ofstream file_output("bench_AllSteps.txt", std::ios_base::app);
+	Timer general_timer(label, file_output);
+	#endif
+
 	
-
-
     // Que tal usar cuRAND neste exemplo?
     for_xy Universe[idx_matrix1D(y, x)] = rand() < RAND_MAX / 10 ? 1 : 0;
     
@@ -60,8 +69,8 @@ void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
 	cudaMalloc((void**)& UniverseGPU, kBinSize);
 	cudaMalloc((void**)& NewUniverseGPU, kBinSize);
 
-	// Podemos fazer assincrono? Sim!
-	// cudaMemcpy(UniverseGPU, Universe, kBinSize, cudaMemcpyHostToDevice);
+	// Podemos fazer assincrono? Muito Complexo!
+	cudaMemcpy(UniverseGPU, Universe, kBinSize, cudaMemcpyHostToDevice);
 
 	// Criamos os Streams
 	for(int stream=0; stream < NumStreams; stream++)
@@ -70,19 +79,61 @@ void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
 	for(int Generation=0; Generation <  NumberOfGenerations; Generation++)
 	{
 		// Submetemos os dados para os streams
-		for(int stream=0; stream < NumStreams; stream++){
+		for(int stream=0; stream < NumStreams; stream++)
+		{
 			int lower = chunk_size * stream; //posicao de offset na memoria
 			int upper = min(lower + chunk_size, kSizeUniv); // Ponteiro para o final da janela
 			int width = upper - lower;
 
-			//Primeira Geração copiamos os dados para GPU
-			if(Generation == 0) 
+			//Primeira Geração copiamos os dados para GPU:
+			/* 	 Caso 1: 					Caso 2:
+				+---------+                 +---------+
+				|x|     |x|                 |  |xxx|  |
+				|         |                 |x|     |x|
+				|x|     |x|                 |  |xxx|  |
+				+---------+                 +---------+
+				1.   Como temos contorno de borda, existe a necessidade de realizar 
+					 previamente 4 copias, que contém as bordas do jogo. 
+				
+				2. Controle de Bordas sem canto.
+				if(Generation == 0) {
 				cudaMemcpyAsync(UniverseGPU + lower,   // ptr. para gpu
 								Universe    + lower,   // ptr. para cpu
 								sizeof(u_char)*width,  // Tam. dos dados
 								cudaMemcpyHostToDevice,// Sentido de copia 
 								streams[stream]);	   // qual fila de stream
-							
+				
+				// Para os casos de borda, necessario mais duas copias!
+				if(is_lower_border())
+				{
+					
+					cudaMemcpyAsync(UniverseGPU +(kSizeUniv-w) + lower,
+					Universe    +(kSizeUniv-w) + lower,
+					sizeof(u_char)*width,
+					cudaMemcpyHostToDevice,
+					streams[stream]);
+				}
+				
+				if(is_right_border())
+				{
+					cudaMemcpyAsync(UniverseGPU lower + w - width,
+									Universe    lower + w - width,
+									sizeof(u_char)*width,
+									cudaMemcpyHostToDevice,
+									streams[stream]);
+				}
+				if(is_low_right_border())
+				{
+					cudaMemcpyAsync(UniverseGPU lower     ,
+									Universe    lower     ,
+									sizeof(u_char)*width  ,
+									cudaMemcpyHostToDevice,
+									streams[stream]);
+				}
+
+				}*/
+			
+		
 			// Emissao de Kernel <<<grid, block, Mem, #Stream>>>
 			GOLInternalKernel<<<grids, blocks, 0, streams[stream]>>>
 			(UniverseGPU + lower, NewUniverseGPU + lower);
@@ -96,7 +147,6 @@ void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
 								streams[stream]);	   // qual fila de stream
 			
 		}
-
 		// Sincronizamos os Streams (eles sao assincronos!)
 		for(int stream=0; stream < NumStreams; stream++)
 			cudaStreamSynchronize(streams[stream]);
@@ -112,8 +162,6 @@ void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
 	#endif /*_DEBUG_PER_STEP*/	
 	}
 
-
-	
 	// Copiamos diretamente para o HOST
 	cudaMemcpy(Universe, UniverseGPU, kBinSize, cudaMemcpyDeviceToHost);
 	

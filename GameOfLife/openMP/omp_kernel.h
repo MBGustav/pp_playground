@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h> 
 #include <unistd.h>
-
+#include <omp.h>
 #define MIN(a,b) (((a)<(b))?(a):(b))
 #define MAX(a,b) (((a)>(b))?(a):(b))
 
@@ -89,7 +89,7 @@ void evolve_serial2D(void *universe, int w, int h)
 // Qualquer célula viva com mais de três vizinhos vivos morre de superpopulação.
 // Qualquer célula com exatamente três vizinhos vivos se torna uma célula viva.
 // Qualquer célula com dois vizinhos vivos continua no mesmo estado para a próxima geração.
-    #pragma omp parallel shared(univ, new_univ) private(x,y)
+    #pragma omp parallel shared(univ, new_univ)
 	for_yx {
 		u_char n = univ[(y-1+h)%h][(x-1+w)%w] + univ[(y-1+h)%h][(x  +w)%w] + univ[(y-1+h)%h][(x+1+w)%w] +
 		           univ[(y  +h)%h][(x-1+w)%w] +                              univ[(y  +h)%h][(x+1+w)%w] +
@@ -106,27 +106,38 @@ void evolve_serial2D(void *universe, int w, int h)
 }
 
 
-void game(void *univ, int NumGenerations)
+void game(void *univ,const int NumGenerations)
 {
 	srand(777);
 	const int h = Height;
 	const int w = Width;
-
+	double beg,end;
+	int Generation = NumGenerations;
 	u_char (*univ2D)[Width] = (u_char (*)[Width]) univ;
 
 
 	for_xy univ2D[y][x] = rand() < RAND_MAX / 10 ? 1 : 0;
-	// for_xy univ2D[y][(x*w)%h] = y == x ? 1 : 0;
-	while (NumGenerations-- )
+	
+	beg = omp_get_wtime();
+	while (Generation-- )
 	{
 		evolve_serial2D(univ, w, h);
-		#ifdef _DEBUG_PER_STEP
+	#ifdef _DEBUG_PER_STEP
 		show2D(univ2D, w, h);
 		getchar();
-		#endif /*_DEBUG_PER_STEP*/
+	#endif /*_DEBUG_PER_STEP*/
+	
 	}
+	end = omp_get_wtime();
+	double time_ms = (end-beg)*1e3;
+	FILE *file = fopen("benchmark.txt", "aw");
+	fprintf(file,"openMP,%i,%i, Total Time Execution, %.4lf\n",NumGenerations, 
+															w, (double) time_ms);
+	fclose(file);
 
-	show2D(univ2D, w, h);
+#ifdef  _DISPLAY_GAME
+		show2D(univ2D, w, h);
+#endif/*_DISPLAY_GAME */
 }
 
 

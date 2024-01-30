@@ -1,6 +1,7 @@
 #ifndef _CUDA_KERNEL_H_
 #define _CUDA_KERNEL_H_
 
+#include <fstream>
 
 __global__ void GOLInternalKernel(u_char *Universe, u_char *NewUniverse)
 {
@@ -25,7 +26,7 @@ __global__ void GOLInternalKernel(u_char *Universe, u_char *NewUniverse)
 }
 
 
-void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
+void GameOfLifeKernel(u_char *Universe,const int NumberOfGenerations)
 {
     srand(777);
     //Game parameters
@@ -33,35 +34,51 @@ void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
 	constexpr int h= Height;
 	const int kSizeUniv = Width * Height; 
 	const int kBinSize = kSizeUniv * sizeof(u_char);
+
 	
     // GPU Parameters
     constexpr int nx_threads= THREADS_X;
 	constexpr int ny_threads= THREADS_Y;
-
-	Timer gpu_timer(0);
-
-
-    for_xy Universe[idx_matrix1D(y, x)] = rand() < RAND_MAX / 10 ? 1 : 0;
-    // for_xy Universe[idx_matrix1D(y, x)] = y == x ? 1 : 0;
-
+	u_char *UniverseGPU, *NewUniverseGPU;
 	dim3 blocks(nx_threads, ny_threads);
 	dim3 grids(_ceil(Width,nx_threads), _ceil(Height, ny_threads));
-	// dim3 grids_border(_ceil(2,nx_threads), _ceil(2, ny_threads));
+	
+	const std::string label = "cuda_v0," +
+							  std::to_string(NumberOfGenerations) + "," + 
+							  std::to_string(w);
 
-	u_char *UniverseGPU, *NewUniverseGPU;
-	gpu_timer.start();
+	#ifdef _DISPLAY_DATA_PROFILING
+	Timer general_timer("", std::cout);
+	#else
+	std::ofstream file_output("bench_AllSteps.txt", std::ios_base::app);
+	Timer general_timer(label, file_output);
+	#endif
+
+	//timer para comparar tempo entre execucoes
+	std::ofstream file_bench("benchmark.txt", std::ios_base::app);
+	Timer comp_timer(label, file_bench);
+	
+
+    for_xy Universe[idx_matrix1D(y, x)] = rand() < RAND_MAX / 10 ? 1 : 0;
+    
+	
+
+	general_timer.start();
 	cudaMalloc((void**)& UniverseGPU, kBinSize);
 	cudaMalloc((void**)& NewUniverseGPU, kBinSize);
-	gpu_timer.stop("Alloc Vectors");
-
-	gpu_timer.start();
+	general_timer.stop("Alloc Vectors");
+	
+	general_timer.start();
+	comp_timer.start();
 	cudaMemcpy(UniverseGPU, Universe, kBinSize, cudaMemcpyHostToDevice);
-	gpu_timer.stop("Copy Memory H->D");
+	general_timer.stop("Copy Memory H->D");
 
 
-	gpu_timer.start();
-	//deal with center
-    while(NumberOfGenerations--){
+	// general_timer.start();
+	
+	int Generation = NumberOfGenerations;
+    while(Generation--)
+	{
         GOLInternalKernel<<<grids, blocks>>>(UniverseGPU, NewUniverseGPU);
     
         swap_pointers((void**)& UniverseGPU,(void**)& NewUniverseGPU);
@@ -77,14 +94,13 @@ void GameOfLifeKernel(u_char *Universe, int NumberOfGenerations)
         #endif /*_DEBUG_PER_STEP*/
 
     }
-	gpu_timer.stop("All Kernels executed");
-
-
+	general_timer.stop("Avg. per Kernel", static_cast<double>(NumberOfGenerations));
 	//copy back to host
-	gpu_timer.start();
+	general_timer.start();
 	cudaMemcpy(Universe, UniverseGPU, kBinSize, cudaMemcpyDeviceToHost);
-	gpu_timer.stop("Copy Memory D->H");
-
+	comp_timer.stop("Total Time Execution");
+	general_timer.stop("Copy Memory D->H");
+	
     	
 	#ifdef  _DISPLAY_GAME
 	DisplayGame(Universe);
