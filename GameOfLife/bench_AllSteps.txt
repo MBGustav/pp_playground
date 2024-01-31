@@ -1,0 +1,1333 @@
+type,NumberOfGenerations,size,function,time_ms
+cuda_v0,100,1024, Alloc Vectors, 0.104448
+cuda_v0,100,1024, Copy Memory H->D, 0.482464
+cuda_v0,100,1024, Avg. per Kernel, 1.48264
+cuda_v0,100,1024, Copy Memory D->H, 0.489824
+cuda_v0,100,1024, Alloc Vectors, 0.148896
+cuda_v0,100,1024, Copy Memory H->D, 0.551744
+cuda_v0,100,1024, Avg. per Kernel, 1.15759
+cuda_v0,100,1024, Copy Memory D->H, 0.50528
+cuda_v1,100,1024, Alloc Vectors, 0.091328
+cuda_v1,100,1024, Copy Memory H->D, 0.555168
+cuda_v1,100,1024, Avg. per Kernel, 1.19506
+cuda_v1,100,1024, Copy Memory D->H, 0.482208
+cuda_v1,100,1024, Alloc Vectors, 0.155744
+cuda_v1,100,1024, Copy Memory H->D, 0.556608
+cuda_v1,100,1024, Avg. per Kernel, 0.938583
+cuda_v1,100,1024, Copy Memory D->H, 0.484384
+cuda_v2,100,1024, Alloc Vectors, 0.13696
+cuda_v2,100,1024, Copy Memory H->D, 0.52272
+cuda_v2,100,1024, Avg. per Kernel, 0.0052272
+cuda_v2,100,1024, Copy Memory D->H, 0.52272
+cuda_v2,100,1024, Alloc Vectors, 0.181536
+cuda_v2,100,1024, Copy Memory H->D, 0.539744
+cuda_v2,100,1024, Avg. per Kernel, 0.00539744
+cuda_v2,100,1024, Copy Memory D->H, 0.539744
+cuda_v2,100,1024, Alloc Vectors, 0.148992
+cuda_v2,100,1024, Copy Memory H->D, 0.543936
+cuda_v2,100,1024, Avg. per Kernel, 0.00543936
+cuda_v2,100,1024, Copy Memory D->H, 0.543936
+cuda_v2,100,1024, Alloc Vectors, 0.189984
+cuda_v2,100,1024, Copy Memory H->D, 0.626624
+cuda_v2,100,1024, Avg. per Kernel, 0.00626624
+cuda_v2,100,1024, Copy Memory D->H, 0.626624
+cuda_v2,100,1024, Alloc Vectors, 0.154496
+cuda_v2,100,1024, Copy Memory H->D, 0.52528
+cuda_v2,100,1024, Avg. per Kernel, 0.0052528
+cuda_v2,100,1024, Copy Memory D->H, 0.52528
+cuda_v2,100,1024, Alloc Vectors, 0.186976
+cuda_v2,100,1024, Copy Memory H->D, 0.541376
+cuda_v2,100,1024, Avg. per Kernel, 0.00541376
+cuda_v2,100,1024, Copy Memory D->H, 0.541376
+cuda_v2,100,1024, Alloc Vectors, 0.16832
+cuda_v2,100,1024, Copy Memory H->D, 0.5296
+cuda_v2,100,1024, Avg. per Kernel, 0.005296
+cuda_v2,100,1024, Copy Memory D->H, 0.5296
+cuda_v1,100,1024, Alloc Vectors, 0.16384
+cuda_v1,100,1024, Copy Memory H->D, 0.52816
+cuda_v1,100,1024, Avg. per Kernel, 1.19328
+cuda_v1,100,1024, Copy Memory D->H, 0.467392
+cuda_v2,100,1024, Alloc Vectors, 0.139456
+cuda_v2,100,1024, Copy Memory H->D, 0.65792
+cuda_v2,100,1024, Avg. per Kernel, 0.0065792
+cuda_v2,100,1024, Copy Memory D->H, 0.65792
+cuda_v0,100,1024, Alloc Vectors, 0.110592
+cuda_v0,100,1024, Copy Memory H->D, 0.519296
+cuda_v0,100,1024, Avg. per Kernel, 1.45609
+cuda_v0,100,1024, Copy Memory D->H, 0.4848
+cuda_v0,100,1024, Alloc Vectors, 0.173792
+cuda_v0,100,1024, Copy Memory H->D, 0.511456
+cuda_v0,100,1024, Avg. per Kernel, 1.15508
+cuda_v0,100,1024, Copy Memory D->H, 0.508224
+cuda_v1,100,1024, Alloc Vectors, 0.100352
+cuda_v1,100,1024, Copy Memory H->D, 0.506432
+cuda_v1,100,1024, Avg. per Kernel, 1.27693
+cuda_v1,100,1024, Copy Memory D->H, 0.514176
+cuda_v1,100,1024, Alloc Vectors, 0.166048
+cuda_v1,100,1024, Copy Memory H->D, 0.520096
+cuda_v1,100,1024, Avg. per Kernel, 0.937105
+cuda_v1,100,1024, Copy Memory D->H, 0.476384
+cuda_v2,100,1024, Alloc Vectors, 0.106048
+cuda_v2,100,1024, Copy Memory H->D, 0.514368
+cuda_v2,100,1024, Avg. per Kernel, 0.00514368
+cuda_v2,100,1024, Copy Memory D->H, 0.514368
+cuda_v2,100,1024, Alloc Vectors, 0.156992
+cuda_v2,100,1024, Copy Memory H->D, 0.498208
+cuda_v2,100,1024, Avg. per Kernel, 0.00498208
+cuda_v2,100,1024, Copy Memory D->H, 0.498208
+cuda_v0,100,1024, Alloc Vectors, 0.124928
+cuda_v0,100,1024, Copy Memory H->D, 0.489088
+cuda_v0,100,1024, Avg. per Kernel, 1.47959
+cuda_v0,100,1024, Copy Memory D->H, 0.487072
+cuda_v0,100,1024, Alloc Vectors, 0.178304
+cuda_v0,100,1024, Copy Memory H->D, 0.51504
+cuda_v0,100,1024, Avg. per Kernel, 1.488
+cuda_v0,100,1024, Copy Memory D->H, 0.686528
+cuda_v1,100,1024, Alloc Vectors, 0.157696
+cuda_v1,100,1024, Copy Memory H->D, 0.587168
+cuda_v1,100,1024, Avg. per Kernel, 1.20024
+cuda_v1,100,1024, Copy Memory D->H, 0.460032
+cuda_v1,100,1024, Alloc Vectors, 0.156224
+cuda_v1,100,1024, Copy Memory H->D, 0.5256
+cuda_v1,100,1024, Avg. per Kernel, 1.20816
+cuda_v1,100,1024, Copy Memory D->H, 0.488896
+cuda_v2,100,1024, Alloc Vectors, 0.164384
+cuda_v2,100,1024, Copy Memory H->D, 0.51344
+cuda_v2,100,1024, Avg. per Kernel, 0.0051344
+cuda_v2,100,1024, Copy Memory D->H, 0.51344
+cuda_v2,100,1024, Alloc Vectors, 0.166464
+cuda_v2,100,1024, Copy Memory H->D, 0.539008
+cuda_v2,100,1024, Avg. per Kernel, 0.00539008
+cuda_v2,100,1024, Copy Memory D->H, 0.539008
+cuda_v0,100,1024, Alloc Vectors, 0.161856
+cuda_v0,100,1024, Copy Memory H->D, 0.521824
+cuda_v0,100,1024, Avg. per Kernel, 1.47709
+cuda_v0,100,1024, Copy Memory D->H, 0.484032
+cuda_v0,100,1024, Alloc Vectors, 0.233248
+cuda_v0,100,1024, Copy Memory H->D, 0.646016
+cuda_v0,100,1024, Avg. per Kernel, 1.15932
+cuda_v0,100,1024, Copy Memory D->H, 0.65616
+cuda_v1,100,1024, Alloc Vectors, 0.110592
+cuda_v1,100,1024, Copy Memory H->D, 0.504064
+cuda_v1,100,1024, Avg. per Kernel, 1.19806
+cuda_v1,100,1024, Copy Memory D->H, 0.542176
+cuda_v1,100,1024, Alloc Vectors, 0.195456
+cuda_v1,100,1024, Copy Memory H->D, 0.50384
+cuda_v1,100,1024, Avg. per Kernel, 0.938443
+cuda_v1,100,1024, Copy Memory D->H, 0.481536
+cuda_v2,100,1024, Alloc Vectors, 0.10336
+cuda_v2,100,1024, Copy Memory H->D, 0.521664
+cuda_v2,100,1024, Avg. per Kernel, 0.00521664
+cuda_v2,100,1024, Copy Memory D->H, 0.521664
+cuda_v2,100,1024, Alloc Vectors, 0.158112
+cuda_v2,100,1024, Copy Memory H->D, 0.52112
+cuda_v2,100,1024, Avg. per Kernel, 0.0052112
+cuda_v2,100,1024, Copy Memory D->H, 0.52112
+cuda_v0,100,1024, Alloc Vectors, 0.114112
+cuda_v0,100,1024, Copy Memory H->D, 0.541152
+cuda_v0,100,1024, Avg. per Kernel, 1.55538
+cuda_v0,100,1024, Copy Memory D->H, 0.502048
+cuda_v0,100,1024, Alloc Vectors, 0.174912
+cuda_v0,100,1024, Copy Memory H->D, 0.56192
+cuda_v0,100,1024, Avg. per Kernel, 1.15867
+cuda_v0,100,1024, Copy Memory D->H, 0.527712
+cuda_v1,100,1024, Alloc Vectors, 0.161248
+cuda_v1,100,1024, Copy Memory H->D, 1.32883
+cuda_v1,100,1024, Avg. per Kernel, 1.19679
+cuda_v1,100,1024, Copy Memory D->H, 0.478624
+cuda_v1,100,1024, Alloc Vectors, 0.17552
+cuda_v1,100,1024, Copy Memory H->D, 0.5304
+cuda_v1,100,1024, Avg. per Kernel, 0.939068
+cuda_v1,100,1024, Copy Memory D->H, 0.487072
+cuda_v2,100,1024, Alloc Vectors, 0.094208
+cuda_v2,100,1024, Copy Memory H->D, 0.5016
+cuda_v2,100,1024, Avg. per Kernel, 0.005016
+cuda_v2,100,1024, Copy Memory D->H, 0.5016
+cuda_v2,100,1024, Alloc Vectors, 0.164704
+cuda_v2,100,1024, Copy Memory H->D, 0.501024
+cuda_v2,100,1024, Avg. per Kernel, 0.00501024
+cuda_v2,100,1024, Copy Memory D->H, 0.501024
+cuda_v0,100,2048, Alloc Vectors, 0.202176
+cuda_v0,100,2048, Copy Memory H->D, 1.6847
+cuda_v0,100,2048, Avg. per Kernel, 5.52971
+cuda_v0,100,2048, Copy Memory D->H, 1.4641
+cuda_v0,100,2048, Alloc Vectors, 0.209568
+cuda_v0,100,2048, Copy Memory H->D, 1.6575
+cuda_v0,100,2048, Avg. per Kernel, 4.56834
+cuda_v0,100,2048, Copy Memory D->H, 1.46294
+cuda_v1,100,2048, Alloc Vectors, 0.174848
+cuda_v1,100,2048, Copy Memory H->D, 1.66624
+cuda_v1,100,2048, Avg. per Kernel, 4.60712
+cuda_v1,100,2048, Copy Memory D->H, 1.42259
+cuda_v1,100,2048, Alloc Vectors, 0.213184
+cuda_v1,100,2048, Copy Memory H->D, 1.6753
+cuda_v1,100,2048, Avg. per Kernel, 3.696
+cuda_v1,100,2048, Copy Memory D->H, 1.43107
+cuda_v2,100,2048, Alloc Vectors, 0.206688
+cuda_v2,100,2048, Copy Memory H->D, 1.67389
+cuda_v2,100,2048, Avg. per Kernel, 0.0167389
+cuda_v2,100,2048, Copy Memory D->H, 1.67389
+cuda_v2,100,2048, Alloc Vectors, 0.204832
+cuda_v2,100,2048, Copy Memory H->D, 1.6295
+cuda_v2,100,2048, Avg. per Kernel, 0.016295
+cuda_v2,100,2048, Copy Memory D->H, 1.6295
+cuda_v0,100,2048, Alloc Vectors, 0.2048
+cuda_v0,100,2048, Copy Memory H->D, 1.63187
+cuda_v0,100,2048, Avg. per Kernel, 4.8888
+cuda_v0,100,2048, Copy Memory D->H, 1.47798
+cuda_v0,100,2048, Alloc Vectors, 0.235488
+cuda_v0,100,2048, Copy Memory H->D, 1.59603
+cuda_v0,100,2048, Avg. per Kernel, 4.57047
+cuda_v0,100,2048, Copy Memory D->H, 1.4807
+cuda_v1,100,2048, Alloc Vectors, 0.188992
+cuda_v1,100,2048, Copy Memory H->D, 1.6168
+cuda_v1,100,2048, Avg. per Kernel, 4.08085
+cuda_v1,100,2048, Copy Memory D->H, 1.44003
+cuda_v1,100,2048, Alloc Vectors, 0.227232
+cuda_v1,100,2048, Copy Memory H->D, 1.65386
+cuda_v1,100,2048, Avg. per Kernel, 3.69618
+cuda_v1,100,2048, Copy Memory D->H, 1.43715
+cuda_v2,100,2048, Alloc Vectors, 0.222016
+cuda_v2,100,2048, Copy Memory H->D, 1.62694
+cuda_v2,100,2048, Avg. per Kernel, 0.0162694
+cuda_v2,100,2048, Copy Memory D->H, 1.62694
+cuda_v2,100,2048, Alloc Vectors, 0.203904
+cuda_v2,100,2048, Copy Memory H->D, 1.65469
+cuda_v2,100,2048, Avg. per Kernel, 0.0165469
+cuda_v2,100,2048, Copy Memory D->H, 1.65469
+cuda_v0,100,100, Alloc Vectors, 0.33248
+cuda_v0,100,100, Copy Memory H->D, 0.036608
+cuda_v0,100,100, Avg. per Kernel, 0.65061
+cuda_v0,100,100, Copy Memory D->H, 0.156096
+cuda_v0,100,100, Alloc Vectors, 0.251424
+cuda_v0,100,100, Copy Memory H->D, 0.038976
+cuda_v0,100,100, Avg. per Kernel, 0.0472064
+cuda_v0,100,100, Copy Memory D->H, 0.111296
+cuda_v1,100,100, Alloc Vectors, 0.091808
+cuda_v1,100,100, Copy Memory H->D, 0.032544
+cuda_v1,100,100, Avg. per Kernel, 0.372053
+cuda_v1,100,100, Copy Memory D->H, 0.025056
+cuda_v1,100,100, Alloc Vectors, 0.163232
+cuda_v1,100,100, Copy Memory H->D, 0.018048
+cuda_v1,100,100, Avg. per Kernel, 0.0612339
+cuda_v1,100,100, Copy Memory D->H, 0.047808
+cuda_v2,100,100, Alloc Vectors, 0.098528
+cuda_v2,100,100, Copy Memory H->D, 0.017952
+cuda_v2,100,100, Avg. per Kernel, 1.41236
+cuda_v2,100,100, Copy Memory D->H, 0.0352
+cuda_v2,100,100, Alloc Vectors, 0.13968
+cuda_v2,100,100, Copy Memory H->D, 0.020192
+cuda_v2,100,100, Avg. per Kernel, 1.06752
+cuda_v2,100,100, Copy Memory D->H, 0.037888
+cuda_v0,100,200, Alloc Vectors, 0.119584
+cuda_v0,100,200, Copy Memory H->D, 0.039104
+cuda_v0,100,200, Avg. per Kernel, 0.547555
+cuda_v0,100,200, Copy Memory D->H, 0.079328
+cuda_v0,100,200, Alloc Vectors, 0.15888
+cuda_v0,100,200, Copy Memory H->D, 0.049024
+cuda_v0,100,200, Avg. per Kernel, 0.0891091
+cuda_v0,100,200, Copy Memory D->H, 0.117408
+cuda_v1,100,200, Alloc Vectors, 0.092032
+cuda_v1,100,200, Copy Memory H->D, 0.051584
+cuda_v1,100,200, Avg. per Kernel, 0.5233
+cuda_v1,100,200, Copy Memory D->H, 0.03712
+cuda_v1,100,200, Alloc Vectors, 0.158688
+cuda_v1,100,200, Copy Memory H->D, 0.047872
+cuda_v1,100,200, Avg. per Kernel, 0.126495
+cuda_v1,100,200, Copy Memory D->H, 0.07504
+cuda_v2,100,200, Alloc Vectors, 0.083392
+cuda_v2,100,200, Copy Memory H->D, 0.045056
+cuda_v2,100,200, Avg. per Kernel, 2.01769
+cuda_v2,100,200, Copy Memory D->H, 0.042208
+cuda_v2,100,200, Alloc Vectors, 0.15744
+cuda_v2,100,200, Copy Memory H->D, 0.042208
+cuda_v2,100,200, Avg. per Kernel, 1.29433
+cuda_v2,100,200, Copy Memory D->H, 0.04592
+cuda_v0,100,300, Alloc Vectors, 0.119648
+cuda_v0,100,300, Copy Memory H->D, 0.075904
+cuda_v0,100,300, Avg. per Kernel, 0.603773
+cuda_v0,100,300, Copy Memory D->H, 0.081728
+cuda_v0,100,300, Alloc Vectors, 0.158592
+cuda_v0,100,300, Copy Memory H->D, 0.069216
+cuda_v0,100,300, Avg. per Kernel, 0.168165
+cuda_v0,100,300, Copy Memory D->H, 0.097088
+cuda_v1,100,300, Alloc Vectors, 0.09392
+cuda_v1,100,300, Copy Memory H->D, 0.068448
+cuda_v1,100,300, Avg. per Kernel, 0.633068
+cuda_v1,100,300, Copy Memory D->H, 0.062944
+cuda_v1,100,300, Alloc Vectors, 0.271712
+cuda_v1,100,300, Copy Memory H->D, 0.084
+cuda_v1,100,300, Avg. per Kernel, 0.248339
+cuda_v1,100,300, Copy Memory D->H, 0.077504
+cuda_v2,100,300, Alloc Vectors, 0.113312
+cuda_v2,100,300, Copy Memory H->D, 0.071616
+cuda_v2,100,300, Avg. per Kernel, 2.48895
+cuda_v2,100,300, Copy Memory D->H, 0.054976
+cuda_v2,100,300, Alloc Vectors, 0.157088
+cuda_v2,100,300, Copy Memory H->D, 0.068096
+cuda_v2,100,300, Avg. per Kernel, 1.64225
+cuda_v2,100,300, Copy Memory D->H, 0.056256
+cuda_v0,100,1024, Alloc Vectors, 0.172448
+cuda_v0,100,1024, Copy Memory H->D, 0.530208
+cuda_v0,100,1024, Avg. per Kernel, 1.48351
+cuda_v0,100,1024, Copy Memory D->H, 0.49776
+cuda_v0,100,1024, Alloc Vectors, 0.180704
+cuda_v0,100,1024, Copy Memory H->D, 0.499776
+cuda_v0,100,1024, Avg. per Kernel, 1.48919
+cuda_v0,100,1024, Copy Memory D->H, 0.506944
+cuda_v1,100,1024, Alloc Vectors, 0.112672
+cuda_v1,100,1024, Copy Memory H->D, 0.484416
+cuda_v1,100,1024, Avg. per Kernel, 0.971826
+cuda_v1,100,1024, Copy Memory D->H, 0.45312
+cuda_v1,100,1024, Alloc Vectors, 0.17664
+cuda_v1,100,1024, Copy Memory H->D, 0.558976
+cuda_v1,100,1024, Avg. per Kernel, 0.939359
+cuda_v1,100,1024, Copy Memory D->H, 0.909408
+cuda_v2,100,1024, Alloc Vectors, 0.147456
+cuda_v2,100,1024, Copy Memory H->D, 0.51792
+cuda_v2,100,1024, Avg. per Kernel, 0.0051792
+cuda_v2,100,1024, Copy Memory D->H, 0.51792
+cuda_v2,100,1024, Alloc Vectors, 0.179776
+cuda_v2,100,1024, Copy Memory H->D, 0.556576
+cuda_v2,100,1024, Avg. per Kernel, 0.00556576
+cuda_v2,100,1024, Copy Memory D->H, 0.556576
+cuda_v0,100,1024, Alloc Vectors, 0.159744
+cuda_v0,100,1024, Copy Memory H->D, 0.505184
+cuda_v0,100,1024, Avg. per Kernel, 1.47522
+cuda_v0,100,1024, Copy Memory D->H, 0.53504
+cuda_v0,100,1024, Alloc Vectors, 0.19344
+cuda_v0,100,1024, Copy Memory H->D, 0.530848
+cuda_v0,100,1024, Avg. per Kernel, 1.15966
+cuda_v0,100,1024, Copy Memory D->H, 0.552288
+cuda_v1,100,1024, Alloc Vectors, 0.143776
+cuda_v1,100,1024, Copy Memory H->D, 0.498944
+cuda_v1,100,1024, Avg. per Kernel, 1.19535
+cuda_v1,100,1024, Copy Memory D->H, 0.454048
+cuda_v1,100,1024, Alloc Vectors, 0.155232
+cuda_v1,100,1024, Copy Memory H->D, 0.499232
+cuda_v1,100,1024, Avg. per Kernel, 0.939257
+cuda_v1,100,1024, Copy Memory D->H, 0.4744
+cuda_v2,100,1024, Alloc Vectors, 0.155648
+cuda_v2,100,1024, Copy Memory H->D, 0.530528
+cuda_v2,100,1024, Avg. per Kernel, 0.00530528
+cuda_v2,100,1024, Copy Memory D->H, 0.530528
+cuda_v2,100,1024, Alloc Vectors, 0.154688
+cuda_v2,100,1024, Copy Memory H->D, 0.536704
+cuda_v2,100,1024, Avg. per Kernel, 0.00536704
+cuda_v2,100,1024, Copy Memory D->H, 0.536704
+cuda_v0,100,1024, Alloc Vectors, 0.159552
+cuda_v0,100,1024, Copy Memory H->D, 0.567872
+cuda_v0,100,1024, Avg. per Kernel, 1.48127
+cuda_v0,100,1024, Copy Memory D->H, 0.500096
+cuda_v0,100,1024, Alloc Vectors, 0.160192
+cuda_v0,100,1024, Copy Memory H->D, 0.568864
+cuda_v0,100,1024, Avg. per Kernel, 1.1584
+cuda_v0,100,1024, Copy Memory D->H, 0.496736
+cuda_v1,100,1024, Alloc Vectors, 0.151424
+cuda_v1,100,1024, Copy Memory H->D, 0.529504
+cuda_v1,100,1024, Avg. per Kernel, 0.988204
+cuda_v1,100,1024, Copy Memory D->H, 0.448288
+cuda_v1,100,1024, Alloc Vectors, 0.160544
+cuda_v1,100,1024, Copy Memory H->D, 0.513696
+cuda_v1,100,1024, Avg. per Kernel, 1.17469
+cuda_v1,100,1024, Copy Memory D->H, 0.488992
+cuda_v2,100,1024, Alloc Vectors, 0.151616
+cuda_v2,100,1024, Copy Memory H->D, 0.52336
+cuda_v2,100,1024, Avg. per Kernel, 0.0052336
+cuda_v2,100,1024, Copy Memory D->H, 0.52336
+cuda_v2,100,1024, Alloc Vectors, 0.201664
+cuda_v2,100,1024, Copy Memory H->D, 0.576128
+cuda_v2,100,1024, Avg. per Kernel, 0.00576128
+cuda_v2,100,1024, Copy Memory D->H, 0.576128
+cuda_v2,100,4096, Alloc Vectors, 0.23328
+cuda_v2,100,4096, Copy Memory H->D, 5.85542
+cuda_v2,100,4096, Avg. per Kernel, 3.04982
+cuda_v2,100,4096, Copy Memory D->H, 5.2504
+cuda_v2,100,4096, Alloc Vectors, 0.25104
+cuda_v2,100,4096, Copy Memory H->D, 5.87133
+cuda_v2,100,4096, Avg. per Kernel, 2.31839
+cuda_v2,100,4096, Copy Memory D->H, 5.26938
+cuda_v0,100,1, Alloc Vectors, 0.133664
+cuda_v0,100,1, Copy Memory H->D, 0.03168
+cuda_v0,100,1, Avg. per Kernel, 0.398359
+cuda_v0,100,1, Copy Memory D->H, 0.042592
+cuda_v0,100,1, Alloc Vectors, 0.185248
+cuda_v0,100,1, Copy Memory H->D, 0.020608
+cuda_v0,100,1, Avg. per Kernel, 0.0244906
+cuda_v0,100,1, Copy Memory D->H, 0.073536
+cuda_v1,100,1, Alloc Vectors, 0.093632
+cuda_v1,100,1, Copy Memory H->D, 0.026624
+cuda_v1,100,1, Avg. per Kernel, 0.334775
+cuda_v1,100,1, Copy Memory D->H, 0.01504
+cuda_v1,100,1, Alloc Vectors, 0.194336
+cuda_v1,100,1, Copy Memory H->D, 0.033184
+cuda_v1,100,1, Avg. per Kernel, 0.022505
+cuda_v1,100,1, Copy Memory D->H, 0.03472
+cuda_v2,100,1, Alloc Vectors, 0.093184
+cuda_v2,100,1, Copy Memory H->D, 0.036672
+cuda_v2,100,1, Avg. per Kernel, 0.712458
+cuda_v2,100,1, Copy Memory D->H, 0.011392
+cuda_v2,100,1, Alloc Vectors, 0.188992
+cuda_v2,100,1, Copy Memory H->D, 0.03728
+cuda_v2,100,1, Avg. per Kernel, 0.410392
+cuda_v2,100,1, Copy Memory D->H, 0.019488
+cuda_v0,100,25, Alloc Vectors, 0.09472
+cuda_v0,100,25, Copy Memory H->D, 0.012224
+cuda_v0,100,25, Avg. per Kernel, 0.45392
+cuda_v0,100,25, Copy Memory D->H, 0.057504
+cuda_v0,100,25, Alloc Vectors, 0.164416
+cuda_v0,100,25, Copy Memory H->D, 0.014464
+cuda_v0,100,25, Avg. per Kernel, 0.0249949
+cuda_v0,100,25, Copy Memory D->H, 0.061376
+cuda_v1,100,25, Alloc Vectors, 0.088064
+cuda_v1,100,25, Copy Memory H->D, 0.011424
+cuda_v1,100,25, Avg. per Kernel, 0.419207
+cuda_v1,100,25, Copy Memory D->H, 0.015904
+cuda_v1,100,25, Alloc Vectors, 0.186432
+cuda_v1,100,25, Copy Memory H->D, 0.01776
+cuda_v1,100,25, Avg. per Kernel, 0.0357658
+cuda_v1,100,25, Copy Memory D->H, 0.037664
+cuda_v2,100,25, Alloc Vectors, 0.08976
+cuda_v2,100,25, Copy Memory H->D, 0.01024
+cuda_v2,100,25, Avg. per Kernel, 0.795359
+cuda_v2,100,25, Copy Memory D->H, 0.0104
+cuda_v2,100,25, Alloc Vectors, 0.16912
+cuda_v2,100,25, Copy Memory H->D, 0.028992
+cuda_v2,100,25, Avg. per Kernel, 0.418784
+cuda_v2,100,25, Copy Memory D->H, 0.03376
+cuda_v0,100,50, Alloc Vectors, 0.098496
+cuda_v0,100,50, Copy Memory H->D, 0.026912
+cuda_v0,100,50, Avg. per Kernel, 0.369865
+cuda_v0,100,50, Copy Memory D->H, 0.045728
+cuda_v0,100,50, Alloc Vectors, 0.151712
+cuda_v0,100,50, Copy Memory H->D, 0.017056
+cuda_v0,100,50, Avg. per Kernel, 0.0265635
+cuda_v0,100,50, Copy Memory D->H, 0.05088
+cuda_v1,100,50, Alloc Vectors, 0.197408
+cuda_v1,100,50, Copy Memory H->D, 0.063488
+cuda_v1,100,50, Avg. per Kernel, 0.421813
+cuda_v1,100,50, Copy Memory D->H, 0.021184
+cuda_v1,100,50, Alloc Vectors, 0.154336
+cuda_v1,100,50, Copy Memory H->D, 0.019328
+cuda_v1,100,50, Avg. per Kernel, 0.0365786
+cuda_v1,100,50, Copy Memory D->H, 0.02416
+cuda_v2,100,50, Alloc Vectors, 0.096256
+cuda_v2,100,50, Copy Memory H->D, 0.012288
+cuda_v2,100,50, Avg. per Kernel, 1.02636
+cuda_v2,100,50, Copy Memory D->H, 0.010272
+cuda_v2,100,50, Alloc Vectors, 0.156192
+cuda_v2,100,50, Copy Memory H->D, 0.0176
+cuda_v2,100,50, Avg. per Kernel, 0.643907
+cuda_v2,100,50, Copy Memory D->H, 0.014464
+cuda_v0,100,75, Alloc Vectors, 0.0944
+cuda_v0,100,75, Copy Memory H->D, 0.030528
+cuda_v0,100,75, Avg. per Kernel, 0.406564
+cuda_v0,100,75, Copy Memory D->H, 0.056416
+cuda_v0,100,75, Alloc Vectors, 0.213632
+cuda_v0,100,75, Copy Memory H->D, 0.033184
+cuda_v0,100,75, Avg. per Kernel, 0.0280806
+cuda_v0,100,75, Copy Memory D->H, 0.051296
+cuda_v1,100,75, Alloc Vectors, 0.100832
+cuda_v1,100,75, Copy Memory H->D, 0.03504
+cuda_v1,100,75, Avg. per Kernel, 0.404109
+cuda_v1,100,75, Copy Memory D->H, 0.045536
+cuda_v1,100,75, Alloc Vectors, 0.193856
+cuda_v1,100,75, Copy Memory H->D, 0.034848
+cuda_v1,100,75, Avg. per Kernel, 0.0383869
+cuda_v1,100,75, Copy Memory D->H, 0.067808
+cuda_v2,100,75, Alloc Vectors, 0.09216
+cuda_v2,100,75, Copy Memory H->D, 0.013024
+cuda_v2,100,75, Avg. per Kernel, 1.17616
+cuda_v2,100,75, Copy Memory D->H, 0.014752
+cuda_v2,100,75, Alloc Vectors, 0.16096
+cuda_v2,100,75, Copy Memory H->D, 0.029184
+cuda_v2,100,75, Avg. per Kernel, 0.818109
+cuda_v2,100,75, Copy Memory D->H, 0.023488
+cuda_v0,100,100, Alloc Vectors, 0.098304
+cuda_v0,100,100, Copy Memory H->D, 0.016288
+cuda_v0,100,100, Avg. per Kernel, 0.123343
+cuda_v0,100,100, Copy Memory D->H, 0.04496
+cuda_v0,100,100, Alloc Vectors, 0.165088
+cuda_v0,100,100, Copy Memory H->D, 0.01824
+cuda_v0,100,100, Avg. per Kernel, 0.045847
+cuda_v0,100,100, Copy Memory D->H, 0.089888
+cuda_v1,100,100, Alloc Vectors, 0.12752
+cuda_v1,100,100, Copy Memory H->D, 0.029376
+cuda_v1,100,100, Avg. per Kernel, 0.0611875
+cuda_v1,100,100, Copy Memory D->H, 0.019808
+cuda_v1,100,100, Alloc Vectors, 0.16416
+cuda_v1,100,100, Copy Memory H->D, 0.02
+cuda_v1,100,100, Avg. per Kernel, 0.0612093
+cuda_v1,100,100, Copy Memory D->H, 0.050496
+cuda_v2,100,100, Alloc Vectors, 0.091936
+cuda_v2,100,100, Copy Memory H->D, 0.018656
+cuda_v2,100,100, Avg. per Kernel, 1.12254
+cuda_v2,100,100, Copy Memory D->H, 0.017312
+cuda_v2,100,100, Alloc Vectors, 0.134848
+cuda_v2,100,100, Copy Memory H->D, 0.01968
+cuda_v2,100,100, Avg. per Kernel, 0.959024
+cuda_v2,100,100, Copy Memory D->H, 0.036736
+cuda_v0,100,125, Alloc Vectors, 0.160928
+cuda_v0,100,125, Copy Memory H->D, 0.038784
+cuda_v0,100,125, Avg. per Kernel, 0.416607
+cuda_v0,100,125, Copy Memory D->H, 0.085824
+cuda_v0,100,125, Alloc Vectors, 0.162368
+cuda_v0,100,125, Copy Memory H->D, 0.033728
+cuda_v0,100,125, Avg. per Kernel, 0.0465949
+cuda_v0,100,125, Copy Memory D->H, 0.093216
+cuda_v1,100,125, Alloc Vectors, 0.112544
+cuda_v1,100,125, Copy Memory H->D, 0.028544
+cuda_v1,100,125, Avg. per Kernel, 0.464305
+cuda_v1,100,125, Copy Memory D->H, 0.053696
+cuda_v1,100,125, Alloc Vectors, 0.152608
+cuda_v1,100,125, Copy Memory H->D, 0.022144
+cuda_v1,100,125, Avg. per Kernel, 0.0684192
+cuda_v1,100,125, Copy Memory D->H, 0.025984
+cuda_v2,100,125, Alloc Vectors, 0.090496
+cuda_v2,100,125, Copy Memory H->D, 0.017024
+cuda_v2,100,125, Avg. per Kernel, 1.47685
+cuda_v2,100,125, Copy Memory D->H, 0.016768
+cuda_v2,100,125, Alloc Vectors, 0.144448
+cuda_v2,100,125, Copy Memory H->D, 0.021024
+cuda_v2,100,125, Avg. per Kernel, 0.855851
+cuda_v2,100,125, Copy Memory D->H, 0.026496
+cuda_v0,100,150, Alloc Vectors, 0.245856
+cuda_v0,100,150, Copy Memory H->D, 0.03072
+cuda_v0,100,150, Avg. per Kernel, 0.516188
+cuda_v0,100,150, Copy Memory D->H, 0.067264
+cuda_v0,100,150, Alloc Vectors, 0.164704
+cuda_v0,100,150, Copy Memory H->D, 0.033376
+cuda_v0,100,150, Avg. per Kernel, 0.0489603
+cuda_v0,100,150, Copy Memory D->H, 0.08832
+cuda_v1,100,150, Alloc Vectors, 0.081568
+cuda_v1,100,150, Copy Memory H->D, 0.044256
+cuda_v1,100,150, Avg. per Kernel, 0.38953
+cuda_v1,100,150, Copy Memory D->H, 0.045632
+cuda_v1,100,150, Alloc Vectors, 0.135936
+cuda_v1,100,150, Copy Memory H->D, 0.026208
+cuda_v1,100,150, Avg. per Kernel, 0.0695187
+cuda_v1,100,150, Copy Memory D->H, 0.030528
+cuda_v2,100,150, Alloc Vectors, 0.13808
+cuda_v2,100,150, Copy Memory H->D, 0.032064
+cuda_v2,100,150, Avg. per Kernel, 1.59905
+cuda_v2,100,150, Copy Memory D->H, 0.021216
+cuda_v2,100,150, Alloc Vectors, 0.158496
+cuda_v2,100,150, Copy Memory H->D, 0.037888
+cuda_v2,100,150, Avg. per Kernel, 1.1878
+cuda_v2,100,150, Copy Memory D->H, 0.040384
+cuda_v0,100,175, Alloc Vectors, 0.094208
+cuda_v0,100,175, Copy Memory H->D, 0.055456
+cuda_v0,100,175, Avg. per Kernel, 0.457095
+cuda_v0,100,175, Copy Memory D->H, 0.14848
+cuda_v0,100,175, Alloc Vectors, 0.166368
+cuda_v0,100,175, Copy Memory H->D, 0.049856
+cuda_v0,100,175, Avg. per Kernel, 0.068505
+cuda_v0,100,175, Copy Memory D->H, 0.087552
+cuda_v1,100,175, Alloc Vectors, 0.125024
+cuda_v1,100,175, Copy Memory H->D, 0.031232
+cuda_v1,100,175, Avg. per Kernel, 0.531829
+cuda_v1,100,175, Copy Memory D->H, 0.03088
+cuda_v1,100,175, Alloc Vectors, 0.163616
+cuda_v1,100,175, Copy Memory H->D, 0.040512
+cuda_v1,100,175, Avg. per Kernel, 0.0981203
+cuda_v1,100,175, Copy Memory D->H, 0.07216
+cuda_v2,100,175, Alloc Vectors, 0.091424
+cuda_v2,100,175, Copy Memory H->D, 0.023296
+cuda_v2,100,175, Avg. per Kernel, 1.88548
+cuda_v2,100,175, Copy Memory D->H, 0.022336
+cuda_v2,100,175, Alloc Vectors, 0.14816
+cuda_v2,100,175, Copy Memory H->D, 0.02832
+cuda_v2,100,175, Avg. per Kernel, 1.1447
+cuda_v2,100,175, Copy Memory D->H, 0.026944
+cuda_v0,100,200, Alloc Vectors, 0.081248
+cuda_v0,100,200, Copy Memory H->D, 0.037408
+cuda_v0,100,200, Avg. per Kernel, 0.163781
+cuda_v0,100,200, Copy Memory D->H, 0.08656
+cuda_v0,100,200, Alloc Vectors, 0.1496
+cuda_v0,100,200, Copy Memory H->D, 0.04144
+cuda_v0,100,200, Avg. per Kernel, 0.088752
+cuda_v0,100,200, Copy Memory D->H, 0.100128
+cuda_v1,100,200, Alloc Vectors, 0.090144
+cuda_v1,100,200, Copy Memory H->D, 0.04512
+cuda_v1,100,200, Avg. per Kernel, 0.202076
+cuda_v1,100,200, Copy Memory D->H, 0.047808
+cuda_v1,100,200, Alloc Vectors, 0.152832
+cuda_v1,100,200, Copy Memory H->D, 0.040672
+cuda_v1,100,200, Avg. per Kernel, 0.125881
+cuda_v1,100,200, Copy Memory D->H, 0.049792
+cuda_v2,100,200, Alloc Vectors, 0.090112
+cuda_v2,100,200, Copy Memory H->D, 0.03888
+cuda_v2,100,200, Avg. per Kernel, 1.72855
+cuda_v2,100,200, Copy Memory D->H, 0.028128
+cuda_v2,100,200, Alloc Vectors, 0.177024
+cuda_v2,100,200, Copy Memory H->D, 0.058016
+cuda_v2,100,200, Avg. per Kernel, 1.66126
+cuda_v2,100,200, Copy Memory D->H, 0.047744
+cuda_v0,100,25, Alloc Vectors, 0.1024
+cuda_v0,100,25, Copy Memory H->D, 0.038496
+cuda_v0,100,25, Avg. per Kernel, 0.0217498
+cuda_v0,100,25, Copy Memory D->H, 0.061568
+cuda_v0,100,25, Alloc Vectors, 0.174816
+cuda_v0,100,25, Copy Memory H->D, 0.035936
+cuda_v0,100,25, Avg. per Kernel, 0.0253872
+cuda_v0,100,25, Copy Memory D->H, 0.049376
+cuda_v1,100,25, Alloc Vectors, 0.076288
+cuda_v1,100,25, Copy Memory H->D, 0.015392
+cuda_v1,100,25, Avg. per Kernel, 0.0321581
+cuda_v1,100,25, Copy Memory D->H, 0.014368
+cuda_v1,100,25, Alloc Vectors, 0.196704
+cuda_v1,100,25, Copy Memory H->D, 0.019584
+cuda_v1,100,25, Avg. per Kernel, 0.034207
+cuda_v1,100,25, Copy Memory D->H, 0.035488
+cuda_v2,100,25, Alloc Vectors, 0.082624
+cuda_v2,100,25, Copy Memory H->D, 0.030048
+cuda_v2,100,25, Avg. per Kernel, 0.393441
+cuda_v2,100,25, Copy Memory D->H, 0.010816
+cuda_v2,100,25, Alloc Vectors, 0.181824
+cuda_v2,100,25, Copy Memory H->D, 0.01664
+cuda_v2,100,25, Avg. per Kernel, 0.418291
+cuda_v2,100,25, Copy Memory D->H, 0.019936
+cuda_v0,100,50, Alloc Vectors, 0.240064
+cuda_v0,100,50, Copy Memory H->D, 0.026624
+cuda_v0,100,50, Avg. per Kernel, 0.0245555
+cuda_v0,100,50, Copy Memory D->H, 0.047936
+cuda_v0,100,50, Alloc Vectors, 0.220192
+cuda_v0,100,50, Copy Memory H->D, 0.028512
+cuda_v0,100,50, Avg. per Kernel, 0.0273376
+cuda_v0,100,50, Copy Memory D->H, 0.065888
+cuda_v1,100,50, Alloc Vectors, 0.091936
+cuda_v1,100,50, Copy Memory H->D, 0.016352
+cuda_v1,100,50, Avg. per Kernel, 0.0331981
+cuda_v1,100,50, Copy Memory D->H, 0.018112
+cuda_v1,100,50, Alloc Vectors, 0.153728
+cuda_v1,100,50, Copy Memory H->D, 0.035264
+cuda_v1,100,50, Avg. per Kernel, 0.0366304
+cuda_v1,100,50, Copy Memory D->H, 0.036064
+cuda_v2,100,50, Alloc Vectors, 0.093504
+cuda_v2,100,50, Copy Memory H->D, 0.038656
+cuda_v2,100,50, Avg. per Kernel, 0.62213
+cuda_v2,100,50, Copy Memory D->H, 0.012704
+cuda_v2,100,50, Alloc Vectors, 0.189376
+cuda_v2,100,50, Copy Memory H->D, 0.030496
+cuda_v2,100,50, Avg. per Kernel, 0.644416
+cuda_v2,100,50, Copy Memory D->H, 0.035712
+cuda_v0,100,75, Alloc Vectors, 0.07168
+cuda_v0,100,75, Copy Memory H->D, 0.01424
+cuda_v0,100,75, Avg. per Kernel, 0.0244486
+cuda_v0,100,75, Copy Memory D->H, 0.052032
+cuda_v0,100,75, Alloc Vectors, 0.160128
+cuda_v0,100,75, Copy Memory H->D, 0.0152
+cuda_v0,100,75, Avg. per Kernel, 0.0275366
+cuda_v0,100,75, Copy Memory D->H, 0.061824
+cuda_v1,100,75, Alloc Vectors, 0.0888
+cuda_v1,100,75, Copy Memory H->D, 0.014624
+cuda_v1,100,75, Avg. per Kernel, 0.0337939
+cuda_v1,100,75, Copy Memory D->H, 0.033216
+cuda_v1,100,75, Alloc Vectors, 0.188512
+cuda_v1,100,75, Copy Memory H->D, 0.028288
+cuda_v1,100,75, Avg. per Kernel, 0.0364186
+cuda_v1,100,75, Copy Memory D->H, 0.027424
+cuda_v2,100,75, Alloc Vectors, 0.083968
+cuda_v2,100,75, Copy Memory H->D, 0.018368
+cuda_v2,100,75, Avg. per Kernel, 0.837267
+cuda_v2,100,75, Copy Memory D->H, 0.014976
+cuda_v2,100,75, Alloc Vectors, 0.189536
+cuda_v2,100,75, Copy Memory H->D, 0.015744
+cuda_v2,100,75, Avg. per Kernel, 0.858993
+cuda_v2,100,75, Copy Memory D->H, 0.035968
+cuda_v0,100,100, Alloc Vectors, 0.0912
+cuda_v0,100,100, Copy Memory H->D, 0.028672
+cuda_v0,100,100, Avg. per Kernel, 0.043479
+cuda_v0,100,100, Copy Memory D->H, 0.075072
+cuda_v0,100,100, Alloc Vectors, 0.181792
+cuda_v0,100,100, Copy Memory H->D, 0.043104
+cuda_v0,100,100, Avg. per Kernel, 0.0481181
+cuda_v0,100,100, Copy Memory D->H, 0.07344
+cuda_v0,100,25, Alloc Vectors, 0.1024
+cuda_v0,100,25, Copy Memory H->D, 0.037824
+cuda_v0,100,25, Avg. per Kernel, 0.0229024
+cuda_v0,100,25, Copy Memory D->H, 0.051136
+cuda_v0,100,25, Alloc Vectors, 0.602624
+cuda_v0,100,25, Copy Memory H->D, 0.018848
+cuda_v0,100,25, Avg. per Kernel, 0.0248339
+cuda_v0,100,25, Copy Memory D->H, 0.048896
+cuda_v1,100,25, Alloc Vectors, 0.08128
+cuda_v1,100,25, Copy Memory H->D, 0.010432
+cuda_v1,100,25, Avg. per Kernel, 0.0319149
+cuda_v1,100,25, Copy Memory D->H, 0.014848
+cuda_v1,100,25, Alloc Vectors, 0.179872
+cuda_v1,100,25, Copy Memory H->D, 0.019264
+cuda_v1,100,25, Avg. per Kernel, 0.0354682
+cuda_v1,100,25, Copy Memory D->H, 0.039616
+cuda_v2,100,25, Alloc Vectors, 0.131936
+cuda_v2,100,25, Copy Memory H->D, 0.031104
+cuda_v2,100,25, Avg. per Kernel, 0.394226
+cuda_v2,100,25, Copy Memory D->H, 0.01232
+cuda_v2,100,25, Alloc Vectors, 0.122848
+cuda_v2,100,25, Copy Memory H->D, 0.015712
+cuda_v2,100,25, Avg. per Kernel, 0.417995
+cuda_v2,100,25, Copy Memory D->H, 0.014496
+cuda_v0,100,50, Alloc Vectors, 0.095136
+cuda_v0,100,50, Copy Memory H->D, 0.0184
+cuda_v0,100,50, Avg. per Kernel, 0.0241722
+cuda_v0,100,50, Copy Memory D->H, 0.067712
+cuda_v0,100,50, Alloc Vectors, 0.240128
+cuda_v0,100,50, Copy Memory H->D, 0.028704
+cuda_v0,100,50, Avg. per Kernel, 0.0271434
+cuda_v0,100,50, Copy Memory D->H, 0.077408
+cuda_v1,100,50, Alloc Vectors, 0.07856
+cuda_v1,100,50, Copy Memory H->D, 0.011616
+cuda_v1,100,50, Avg. per Kernel, 0.033199
+cuda_v1,100,50, Copy Memory D->H, 0.049504
+cuda_v1,100,50, Alloc Vectors, 0.157248
+cuda_v1,100,50, Copy Memory H->D, 0.014304
+cuda_v1,100,50, Avg. per Kernel, 0.0360986
+cuda_v1,100,50, Copy Memory D->H, 0.036864
+cuda_v2,100,50, Alloc Vectors, 0.077568
+cuda_v2,100,50, Copy Memory H->D, 0.012064
+cuda_v2,100,50, Avg. per Kernel, 0.619964
+cuda_v2,100,50, Copy Memory D->H, 0.011744
+cuda_v2,100,50, Alloc Vectors, 0.141824
+cuda_v2,100,50, Copy Memory H->D, 0.029184
+cuda_v2,100,50, Avg. per Kernel, 0.645103
+cuda_v2,100,50, Copy Memory D->H, 0.01936
+cuda_v0,100,75, Alloc Vectors, 0.159808
+cuda_v0,100,75, Copy Memory H->D, 0.02688
+cuda_v0,100,75, Avg. per Kernel, 0.0251107
+cuda_v0,100,75, Copy Memory D->H, 0.058688
+cuda_v0,100,75, Alloc Vectors, 0.184224
+cuda_v0,100,75, Copy Memory H->D, 0.017888
+cuda_v0,100,75, Avg. per Kernel, 0.0280627
+cuda_v0,100,75, Copy Memory D->H, 0.058176
+cuda_v1,100,75, Alloc Vectors, 0.096256
+cuda_v1,100,75, Copy Memory H->D, 0.028672
+cuda_v1,100,75, Avg. per Kernel, 0.0336643
+cuda_v1,100,75, Copy Memory D->H, 0.018368
+cuda_v1,100,75, Alloc Vectors, 0.134048
+cuda_v1,100,75, Copy Memory H->D, 0.01888
+cuda_v1,100,75, Avg. per Kernel, 0.03664
+cuda_v1,100,75, Copy Memory D->H, 0.025888
+cuda_v2,100,75, Alloc Vectors, 0.076512
+cuda_v2,100,75, Copy Memory H->D, 0.018432
+cuda_v2,100,75, Avg. per Kernel, 0.834679
+cuda_v2,100,75, Copy Memory D->H, 0.017504
+cuda_v2,100,75, Alloc Vectors, 0.125024
+cuda_v2,100,75, Copy Memory H->D, 0.029504
+cuda_v2,100,75, Avg. per Kernel, 0.857193
+cuda_v2,100,75, Copy Memory D->H, 0.032096
+cuda_v0,100,100, Alloc Vectors, 0.080096
+cuda_v0,100,100, Copy Memory H->D, 0.014528
+cuda_v0,100,100, Avg. per Kernel, 0.0430714
+cuda_v0,100,100, Copy Memory D->H, 0.058624
+cuda_v0,100,100, Alloc Vectors, 0.143168
+cuda_v0,100,100, Copy Memory H->D, 0.017152
+cuda_v0,100,100, Avg. per Kernel, 0.0460371
+cuda_v0,100,100, Copy Memory D->H, 0.04816
+cuda_v1,100,100, Alloc Vectors, 0.08192
+cuda_v1,100,100, Copy Memory H->D, 0.015968
+cuda_v1,100,100, Avg. per Kernel, 0.0570778
+cuda_v1,100,100, Copy Memory D->H, 0.013088
+cuda_v1,100,100, Alloc Vectors, 0.133216
+cuda_v1,100,100, Copy Memory H->D, 0.0312
+cuda_v1,100,100, Avg. per Kernel, 0.0606352
+cuda_v1,100,100, Copy Memory D->H, 0.026176
+cuda_v2,100,100, Alloc Vectors, 0.126976
+cuda_v2,100,100, Copy Memory H->D, 0.091808
+cuda_v2,100,100, Avg. per Kernel, 1.04489
+cuda_v2,100,100, Copy Memory D->H, 0.031488
+cuda_v2,100,100, Alloc Vectors, 0.227168
+cuda_v2,100,100, Copy Memory H->D, 0.03184
+cuda_v2,100,100, Avg. per Kernel, 0.950152
+cuda_v2,100,100, Copy Memory D->H, 0.03472
+cuda_v0,100,125, Alloc Vectors, 0.091584
+cuda_v0,100,125, Copy Memory H->D, 0.018432
+cuda_v0,100,125, Avg. per Kernel, 0.043375
+cuda_v0,100,125, Copy Memory D->H, 0.045888
+cuda_v0,100,125, Alloc Vectors, 0.124384
+cuda_v0,100,125, Copy Memory H->D, 0.022592
+cuda_v0,100,125, Avg. per Kernel, 0.0468346
+cuda_v0,100,125, Copy Memory D->H, 0.059776
+cuda_v1,100,125, Alloc Vectors, 0.07776
+cuda_v1,100,125, Copy Memory H->D, 0.022016
+cuda_v1,100,125, Avg. per Kernel, 0.0642832
+cuda_v1,100,125, Copy Memory D->H, 0.021888
+cuda_v1,100,125, Alloc Vectors, 0.12416
+cuda_v1,100,125, Copy Memory H->D, 0.033408
+cuda_v1,100,125, Avg. per Kernel, 0.0688243
+cuda_v1,100,125, Copy Memory D->H, 0.03152
+cuda_v2,100,125, Alloc Vectors, 0.091872
+cuda_v2,100,125, Copy Memory H->D, 0.018432
+cuda_v2,100,125, Avg. per Kernel, 1.08062
+cuda_v2,100,125, Copy Memory D->H, 0.016256
+cuda_v2,100,125, Alloc Vectors, 0.1336
+cuda_v2,100,125, Copy Memory H->D, 0.020448
+cuda_v2,100,125, Avg. per Kernel, 1.07879
+cuda_v2,100,125, Copy Memory D->H, 0.02064
+cuda_v0,100,150, Alloc Vectors, 0.080192
+cuda_v0,100,150, Copy Memory H->D, 0.018848
+cuda_v0,100,150, Avg. per Kernel, 0.045176
+cuda_v0,100,150, Copy Memory D->H, 0.058688
+cuda_v0,100,150, Alloc Vectors, 0.124864
+cuda_v0,100,150, Copy Memory H->D, 0.0256
+cuda_v0,100,150, Avg. per Kernel, 0.0488211
+cuda_v0,100,150, Copy Memory D->H, 0.063168
+cuda_v1,100,150, Alloc Vectors, 0.082112
+cuda_v1,100,150, Copy Memory H->D, 0.024576
+cuda_v1,100,150, Avg. per Kernel, 0.0662899
+cuda_v1,100,150, Copy Memory D->H, 0.02368
+cuda_v1,100,150, Alloc Vectors, 0.1528
+cuda_v1,100,150, Copy Memory H->D, 0.022912
+cuda_v1,100,150, Avg. per Kernel, 0.0693104
+cuda_v1,100,150, Copy Memory D->H, 0.029472
+cuda_v2,100,150, Alloc Vectors, 0.090112
+cuda_v2,100,150, Copy Memory H->D, 0.02064
+cuda_v2,100,150, Avg. per Kernel, 1.28034
+cuda_v2,100,150, Copy Memory D->H, 0.019296
+cuda_v2,100,150, Alloc Vectors, 0.178432
+cuda_v2,100,150, Copy Memory H->D, 0.034784
+cuda_v2,100,150, Avg. per Kernel, 1.25656
+cuda_v2,100,150, Copy Memory D->H, 0.025696
+cuda_v0,100,175, Alloc Vectors, 0.081472
+cuda_v0,100,175, Copy Memory H->D, 0.02768
+cuda_v0,100,175, Avg. per Kernel, 0.0653088
+cuda_v0,100,175, Copy Memory D->H, 0.055456
+cuda_v0,100,175, Alloc Vectors, 0.134304
+cuda_v0,100,175, Copy Memory H->D, 0.038048
+cuda_v0,100,175, Avg. per Kernel, 0.0690042
+cuda_v0,100,175, Copy Memory D->H, 0.065856
+cuda_v1,100,175, Alloc Vectors, 0.08192
+cuda_v1,100,175, Copy Memory H->D, 0.03552
+cuda_v1,100,175, Avg. per Kernel, 0.09488
+cuda_v1,100,175, Copy Memory D->H, 0.026912
+cuda_v1,100,175, Alloc Vectors, 0.127072
+cuda_v1,100,175, Copy Memory H->D, 0.028768
+cuda_v1,100,175, Avg. per Kernel, 0.0982406
+cuda_v1,100,175, Copy Memory D->H, 0.048192
+cuda_v2,100,175, Alloc Vectors, 0.08032
+cuda_v2,100,175, Copy Memory H->D, 0.050176
+cuda_v2,100,175, Avg. per Kernel, 1.45545
+cuda_v2,100,175, Copy Memory D->H, 0.023904
+cuda_v2,100,175, Alloc Vectors, 0.164384
+cuda_v2,100,175, Copy Memory H->D, 0.028256
+cuda_v2,100,175, Avg. per Kernel, 1.14359
+cuda_v2,100,175, Copy Memory D->H, 0.044864
+cuda_v0,100,200, Alloc Vectors, 0.090208
+cuda_v0,100,200, Copy Memory H->D, 0.052672
+cuda_v0,100,200, Avg. per Kernel, 0.0851974
+cuda_v0,100,200, Copy Memory D->H, 0.069472
+cuda_v0,100,200, Alloc Vectors, 0.1224
+cuda_v0,100,200, Copy Memory H->D, 0.032544
+cuda_v0,100,200, Avg. per Kernel, 0.0886045
+cuda_v0,100,200, Copy Memory D->H, 0.074336
+cuda_v1,100,200, Alloc Vectors, 0.088352
+cuda_v1,100,200, Copy Memory H->D, 0.027648
+cuda_v1,100,200, Avg. per Kernel, 0.122508
+cuda_v1,100,200, Copy Memory D->H, 0.031264
+cuda_v1,100,200, Alloc Vectors, 0.130624
+cuda_v1,100,200, Copy Memory H->D, 0.030592
+cuda_v1,100,200, Avg. per Kernel, 0.126126
+cuda_v1,100,200, Copy Memory D->H, 0.037056
+cuda_v2,100,200, Alloc Vectors, 0.079936
+cuda_v2,100,200, Copy Memory H->D, 0.026944
+cuda_v2,100,200, Avg. per Kernel, 1.65055
+cuda_v2,100,200, Copy Memory D->H, 0.026752
+cuda_v2,100,200, Alloc Vectors, 0.180064
+cuda_v2,100,200, Copy Memory H->D, 0.031424
+cuda_v2,100,200, Avg. per Kernel, 1.66114
+cuda_v2,100,200, Copy Memory D->H, 0.040128
+cuda_v0,100,25, Alloc Vectors, 0.082624
+cuda_v0,100,25, Copy Memory H->D, 0.01184
+cuda_v0,100,25, Avg. per Kernel, 0.0216474
+cuda_v0,100,25, Copy Memory D->H, 0.037216
+cuda_v0,100,25, Alloc Vectors, 0.16032
+cuda_v0,100,25, Copy Memory H->D, 0.018112
+cuda_v0,100,25, Avg. per Kernel, 0.025599
+cuda_v0,100,25, Copy Memory D->H, 0.045696
+cuda_v1,100,25, Alloc Vectors, 0.081792
+cuda_v1,100,25, Copy Memory H->D, 0.011296
+cuda_v1,100,25, Avg. per Kernel, 0.0323178
+cuda_v1,100,25, Copy Memory D->H, 0.036736
+cuda_v1,100,25, Alloc Vectors, 0.164736
+cuda_v1,100,25, Copy Memory H->D, 0.017472
+cuda_v1,100,25, Avg. per Kernel, 0.0353427
+cuda_v1,100,25, Copy Memory D->H, 0.034592
+cuda_v2,100,25, Alloc Vectors, 0.087936
+cuda_v2,100,25, Copy Memory H->D, 0.01328
+cuda_v2,100,25, Avg. per Kernel, 0.393645
+cuda_v2,100,25, Copy Memory D->H, 0.011296
+cuda_v2,100,25, Alloc Vectors, 0.163104
+cuda_v2,100,25, Copy Memory H->D, 0.019936
+cuda_v2,100,25, Avg. per Kernel, 0.418177
+cuda_v2,100,25, Copy Memory D->H, 0.034944
+cuda_v0,100,50, Alloc Vectors, 0.079968
+cuda_v0,100,50, Copy Memory H->D, 0.014304
+cuda_v0,100,50, Avg. per Kernel, 0.0229056
+cuda_v0,100,50, Copy Memory D->H, 0.052128
+cuda_v0,100,50, Alloc Vectors, 0.13952
+cuda_v0,100,50, Copy Memory H->D, 0.017184
+cuda_v0,100,50, Avg. per Kernel, 0.0256362
+cuda_v0,100,50, Copy Memory D->H, 0.045056
+cuda_v1,100,50, Alloc Vectors, 0.082976
+cuda_v1,100,50, Copy Memory H->D, 0.012288
+cuda_v1,100,50, Avg. per Kernel, 0.0338067
+cuda_v1,100,50, Copy Memory D->H, 0.014752
+cuda_v1,100,50, Alloc Vectors, 0.124576
+cuda_v1,100,50, Copy Memory H->D, 0.018752
+cuda_v1,100,50, Avg. per Kernel, 0.0364906
+cuda_v1,100,50, Copy Memory D->H, 0.026528
+cuda_v2,100,50, Alloc Vectors, 0.079936
+cuda_v2,100,50, Copy Memory H->D, 0.013984
+cuda_v2,100,50, Avg. per Kernel, 0.620244
+cuda_v2,100,50, Copy Memory D->H, 0.010272
+cuda_v2,100,50, Alloc Vectors, 0.15776
+cuda_v2,100,50, Copy Memory H->D, 0.01424
+cuda_v2,100,50, Avg. per Kernel, 0.645005
+cuda_v2,100,50, Copy Memory D->H, 0.014176
+cuda_v0,100,1024, Alloc Vectors, 0.090112
+cuda_v0,100,1024, Copy Memory H->D, 0.517248
+cuda_v0,100,1024, Avg. per Kernel, 1.57141
+cuda_v0,100,1024, Copy Memory D->H, 0.487808
+cuda_v0,100,1024, Alloc Vectors, 0.131392
+cuda_v0,100,1024, Copy Memory H->D, 0.49968
+cuda_v0,100,1024, Avg. per Kernel, 1.48866
+cuda_v0,100,1024, Copy Memory D->H, 0.494016
+cuda_v1,100,1024, Alloc Vectors, 0.189312
+cuda_v1,100,1024, Copy Memory H->D, 0.584736
+cuda_v1,100,1024, Avg. per Kernel, 1.01019
+cuda_v1,100,1024, Copy Memory D->H, 0.46912
+cuda_v1,100,1024, Alloc Vectors, 0.1528
+cuda_v1,100,1024, Copy Memory H->D, 0.48208
+cuda_v1,100,1024, Avg. per Kernel, 0.936774
+cuda_v1,100,1024, Copy Memory D->H, 0.464256
+cuda_v2,100,1024, Alloc Vectors, 0.092224
+cuda_v2,100,1024, Copy Memory H->D, 0.504096
+cuda_v2,100,1024, Avg. per Kernel, 0.00504096
+cuda_v2,100,1024, Copy Memory D->H, 0.504096
+cuda_v2,100,1024, Alloc Vectors, 0.13648
+cuda_v2,100,1024, Copy Memory H->D, 0.569376
+cuda_v2,100,1024, Avg. per Kernel, 0.00569376
+cuda_v2,100,1024, Copy Memory D->H, 0.569376
+cuda_v0,100,1044, Alloc Vectors, 0.135168
+cuda_v0,100,1044, Copy Memory H->D, 0.546848
+cuda_v0,100,1044, Avg. per Kernel, 1.99609
+cuda_v0,100,1044, Copy Memory D->H, 0.501344
+cuda_v0,100,1044, Alloc Vectors, 0.232832
+cuda_v0,100,1044, Copy Memory H->D, 0.556096
+cuda_v0,100,1044, Avg. per Kernel, 1.23465
+cuda_v0,100,1044, Copy Memory D->H, 0.5144
+cuda_v1,100,1044, Alloc Vectors, 0.130016
+cuda_v1,100,1044, Copy Memory H->D, 0.516128
+cuda_v1,100,1044, Avg. per Kernel, 2.61782
+cuda_v1,100,1044, Copy Memory D->H, 0.458336
+cuda_v1,100,1044, Alloc Vectors, 0.226528
+cuda_v1,100,1044, Copy Memory H->D, 0.52704
+cuda_v1,100,1044, Avg. per Kernel, 1.85399
+cuda_v1,100,1044, Copy Memory D->H, 0.49984
+cuda_v2,100,1044, Alloc Vectors, 0.131072
+cuda_v2,100,1044, Copy Memory H->D, 0.510336
+cuda_v2,100,1044, Avg. per Kernel, 2.63083
+cuda_v2,100,1044, Copy Memory D->H, 0.446944
+cuda_v2,100,1044, Alloc Vectors, 0.210272
+cuda_v2,100,1044, Copy Memory H->D, 0.576768
+cuda_v2,100,1044, Avg. per Kernel, 2.25034
+cuda_v2,100,1044, Copy Memory D->H, 0.458272
+cuda_v0,100,1064, Alloc Vectors, 0.132032
+cuda_v0,100,1064, Copy Memory H->D, 0.53712
+cuda_v0,100,1064, Avg. per Kernel, 2.05251
+cuda_v0,100,1064, Copy Memory D->H, 0.514528
+cuda_v0,100,1064, Alloc Vectors, 0.221888
+cuda_v0,100,1064, Copy Memory H->D, 0.576864
+cuda_v0,100,1064, Avg. per Kernel, 1.30979
+cuda_v0,100,1064, Copy Memory D->H, 0.50528
+cuda_v1,100,1064, Alloc Vectors, 0.137472
+cuda_v1,100,1064, Copy Memory H->D, 0.54224
+cuda_v1,100,1064, Avg. per Kernel, 2.662
+cuda_v1,100,1064, Copy Memory D->H, 0.46976
+cuda_v1,100,1064, Alloc Vectors, 0.182464
+cuda_v1,100,1064, Copy Memory H->D, 0.619456
+cuda_v1,100,1064, Avg. per Kernel, 1.9591
+cuda_v1,100,1064, Copy Memory D->H, 0.555712
+cuda_v2,100,1064, Alloc Vectors, 0.149216
+cuda_v2,100,1064, Copy Memory H->D, 0.618528
+cuda_v2,100,1064, Avg. per Kernel, 3.20246
+cuda_v2,100,1064, Copy Memory D->H, 0.462592
+cuda_v2,100,1064, Alloc Vectors, 0.210464
+cuda_v2,100,1064, Copy Memory H->D, 0.544256
+cuda_v2,100,1064, Avg. per Kernel, 2.25714
+cuda_v2,100,1064, Copy Memory D->H, 0.460928
+cuda_v0,100,1084, Alloc Vectors, 0.131552
+cuda_v0,100,1084, Copy Memory H->D, 0.622208
+cuda_v0,100,1084, Avg. per Kernel, 2.04288
+cuda_v0,100,1084, Copy Memory D->H, 0.53536
+cuda_v0,100,1084, Alloc Vectors, 0.256832
+cuda_v0,100,1084, Copy Memory H->D, 0.686624
+cuda_v0,100,1084, Avg. per Kernel, 1.3045
+cuda_v0,100,1084, Copy Memory D->H, 0.515936
+cuda_v1,100,1084, Alloc Vectors, 0.140992
+cuda_v1,100,1084, Copy Memory H->D, 0.539648
+cuda_v1,100,1084, Avg. per Kernel, 2.73291
+cuda_v1,100,1084, Copy Memory D->H, 0.481472
+cuda_v1,100,1084, Alloc Vectors, 0.201632
+cuda_v1,100,1084, Copy Memory H->D, 0.608096
+cuda_v1,100,1084, Avg. per Kernel, 1.96511
+cuda_v1,100,1084, Copy Memory D->H, 0.488096
+cuda_v2,100,1084, Alloc Vectors, 0.220768
+cuda_v2,100,1084, Copy Memory H->D, 0.573888
+cuda_v2,100,1084, Avg. per Kernel, 0.00573888
+cuda_v2,100,1084, Copy Memory D->H, 0.573888
+cuda_v2,100,1084, Alloc Vectors, 0.230656
+cuda_v2,100,1084, Copy Memory H->D, 0.576928
+cuda_v2,100,1084, Avg. per Kernel, 0.00576928
+cuda_v2,100,1084, Copy Memory D->H, 0.576928
+cuda_v0,100,1104, Alloc Vectors, 0.132352
+cuda_v0,100,1104, Copy Memory H->D, 0.545632
+cuda_v0,100,1104, Avg. per Kernel, 2.07765
+cuda_v0,100,1104, Copy Memory D->H, 0.503488
+cuda_v0,100,1104, Alloc Vectors, 0.20816
+cuda_v0,100,1104, Copy Memory H->D, 0.615424
+cuda_v0,100,1104, Avg. per Kernel, 1.38436
+cuda_v0,100,1104, Copy Memory D->H, 0.526464
+cuda_v1,100,1104, Alloc Vectors, 0.139264
+cuda_v1,100,1104, Copy Memory H->D, 0.553312
+cuda_v1,100,1104, Avg. per Kernel, 2.91711
+cuda_v1,100,1104, Copy Memory D->H, 0.484672
+cuda_v1,100,1104, Alloc Vectors, 0.189504
+cuda_v1,100,1104, Copy Memory H->D, 0.56576
+cuda_v1,100,1104, Avg. per Kernel, 2.0782
+cuda_v1,100,1104, Copy Memory D->H, 0.4904
+cuda_v2,100,1104, Alloc Vectors, 0.134944
+cuda_v2,100,1104, Copy Memory H->D, 0.561408
+cuda_v2,100,1104, Avg. per Kernel, 0.00561408
+cuda_v2,100,1104, Copy Memory D->H, 0.561408
+cuda_v2,100,1104, Alloc Vectors, 0.20384
+cuda_v2,100,1104, Copy Memory H->D, 0.614016
+cuda_v2,100,1104, Avg. per Kernel, 0.00614016
+cuda_v2,100,1104, Copy Memory D->H, 0.614016
+cuda_v0,100,1124, Alloc Vectors, 0.145408
+cuda_v0,100,1124, Copy Memory H->D, 0.564832
+cuda_v0,100,1124, Avg. per Kernel, 2.12616
+cuda_v0,100,1124, Copy Memory D->H, 0.51104
+cuda_v0,100,1124, Alloc Vectors, 0.210688
+cuda_v0,100,1124, Copy Memory H->D, 0.646944
+cuda_v0,100,1124, Avg. per Kernel, 1.45875
+cuda_v0,100,1124, Copy Memory D->H, 0.53312
+cuda_v1,100,1124, Alloc Vectors, 0.187904
+cuda_v1,100,1124, Copy Memory H->D, 0.627264
+cuda_v1,100,1124, Avg. per Kernel, 2.71098
+cuda_v1,100,1124, Copy Memory D->H, 0.505824
+cuda_v1,100,1124, Alloc Vectors, 0.237152
+cuda_v1,100,1124, Copy Memory H->D, 0.615008
+cuda_v1,100,1124, Avg. per Kernel, 2.18909
+cuda_v1,100,1124, Copy Memory D->H, 0.503648
+cuda_v0,100,1500, Alloc Vectors, 0.172032
+cuda_v0,100,1500, Copy Memory H->D, 0.954912
+cuda_v0,100,1500, Avg. per Kernel, 3.23147
+cuda_v0,100,1500, Copy Memory D->H, 0.832704
+cuda_v0,100,1500, Alloc Vectors, 0.250848
+cuda_v0,100,1500, Copy Memory H->D, 1.54038
+cuda_v0,100,1500, Avg. per Kernel, 2.4827
+cuda_v0,100,1500, Copy Memory D->H, 0.88752
+cuda_v1,100,1500, Alloc Vectors, 0.183936
+cuda_v1,100,1500, Copy Memory H->D, 0.972416
+cuda_v1,100,1500, Avg. per Kernel, 4.4257
+cuda_v1,100,1500, Copy Memory D->H, 0.805856
+cuda_v1,100,1500, Alloc Vectors, 0.22384
+cuda_v1,100,1500, Copy Memory H->D, 0.980832
+cuda_v1,100,1500, Avg. per Kernel, 3.73856
+cuda_v1,100,1500, Copy Memory D->H, 0.897696
+cuda_v2,100,1500, Alloc Vectors, 0.159136
+cuda_v2,100,1500, Copy Memory H->D, 0.990464
+cuda_v2,100,1500, Avg. per Kernel, 2.99006
+cuda_v2,100,1500, Copy Memory D->H, 0.785664
+cuda_v2,100,1500, Alloc Vectors, 0.32336
+cuda_v2,100,1500, Copy Memory H->D, 1.33347
+cuda_v2,100,1500, Avg. per Kernel, 2.25269
+cuda_v2,100,1500, Copy Memory D->H, 0.788576
+cuda_v0,100,1700, Alloc Vectors, 0.207136
+cuda_v0,100,1700, Copy Memory H->D, 1.17491
+cuda_v0,100,1700, Avg. per Kernel, 3.91782
+cuda_v0,100,1700, Copy Memory D->H, 1.03219
+cuda_v0,100,1700, Alloc Vectors, 0.340128
+cuda_v0,100,1700, Copy Memory H->D, 1.63251
+cuda_v0,100,1700, Avg. per Kernel, 3.24803
+cuda_v0,100,1700, Copy Memory D->H, 1.01098
+cuda_v1,100,1700, Alloc Vectors, 0.172032
+cuda_v1,100,1700, Copy Memory H->D, 1.1535
+cuda_v1,100,1700, Avg. per Kernel, 5.47332
+cuda_v1,100,1700, Copy Memory D->H, 0.99856
+cuda_v1,100,1700, Alloc Vectors, 0.236352
+cuda_v1,100,1700, Copy Memory H->D, 1.27072
+cuda_v1,100,1700, Avg. per Kernel, 4.92594
+cuda_v1,100,1700, Copy Memory D->H, 1.06896
+cuda_v2,100,1700, Alloc Vectors, 0.140608
+cuda_v2,100,1700, Copy Memory H->D, 1.18989
+cuda_v2,100,1700, Avg. per Kernel, 0.0118989
+cuda_v2,100,1700, Copy Memory D->H, 1.18989
+cuda_v2,100,1700, Alloc Vectors, 0.257152
+cuda_v2,100,1700, Copy Memory H->D, 1.77546
+cuda_v2,100,1700, Avg. per Kernel, 0.0177546
+cuda_v2,100,1700, Copy Memory D->H, 1.77546
+cuda_v0,100,1900, Alloc Vectors, 0.208896
+cuda_v0,100,1900, Copy Memory H->D, 1.54829
+cuda_v0,100,1900, Avg. per Kernel, 4.6096
+cuda_v0,100,1900, Copy Memory D->H, 1.19981
+cuda_v0,100,1900, Alloc Vectors, 0.240064
+cuda_v0,100,1900, Copy Memory H->D, 1.43056
+cuda_v0,100,1900, Avg. per Kernel, 3.99848
+cuda_v0,100,1900, Copy Memory D->H, 1.1865
+cuda_v1,100,1900, Alloc Vectors, 0.157696
+cuda_v1,100,1900, Copy Memory H->D, 1.40554
+cuda_v1,100,1900, Avg. per Kernel, 6.81867
+cuda_v1,100,1900, Copy Memory D->H, 1.17734
+cuda_v1,100,1900, Alloc Vectors, 0.249088
+cuda_v1,100,1900, Copy Memory H->D, 1.40595
+cuda_v1,100,1900, Avg. per Kernel, 6.0832
+cuda_v1,100,1900, Copy Memory D->H, 1.2071
+cuda_v2,100,1900, Alloc Vectors, 0.15824
+cuda_v2,100,1900, Copy Memory H->D, 1.40163
+cuda_v2,100,1900, Avg. per Kernel, 0.0140163
+cuda_v2,100,1900, Copy Memory D->H, 1.40163
+cuda_v2,100,1900, Alloc Vectors, 0.238592
+cuda_v2,100,1900, Copy Memory H->D, 1.50061
+cuda_v2,100,1900, Avg. per Kernel, 0.0150061
+cuda_v2,100,1900, Copy Memory D->H, 1.50061
+cuda_v0,100,2100, Alloc Vectors, 0.288672
+cuda_v0,100,2100, Copy Memory H->D, 1.77296
+cuda_v0,100,2100, Avg. per Kernel, 5.71992
+cuda_v0,100,2100, Copy Memory D->H, 1.50035
+cuda_v0,100,2100, Alloc Vectors, 0.483616
+cuda_v0,100,2100, Copy Memory H->D, 2.32602
+cuda_v0,100,2100, Avg. per Kernel, 4.85699
+cuda_v0,100,2100, Copy Memory D->H, 1.50746
+cuda_v1,100,2100, Alloc Vectors, 0.178176
+cuda_v1,100,2100, Copy Memory H->D, 1.73654
+cuda_v1,100,2100, Avg. per Kernel, 8.12987
+cuda_v1,100,2100, Copy Memory D->H, 1.44538
+cuda_v1,100,2100, Alloc Vectors, 0.3072
+cuda_v1,100,2100, Copy Memory H->D, 1.96509
+cuda_v1,100,2100, Avg. per Kernel, 7.34717
+cuda_v1,100,2100, Copy Memory D->H, 1.43997
+cuda_v2,100,2100, Alloc Vectors, 0.279648
+cuda_v2,100,2100, Copy Memory H->D, 2.03453
+cuda_v2,100,2100, Avg. per Kernel, 0.0203453
+cuda_v2,100,2100, Copy Memory D->H, 2.03453
+cuda_v2,100,2100, Alloc Vectors, 0.297344
+cuda_v2,100,2100, Copy Memory H->D, 2.2031
+cuda_v2,100,2100, Avg. per Kernel, 0.022031
+cuda_v2,100,2100, Copy Memory D->H, 2.2031
+cuda_v0,100,2300, Alloc Vectors, 0.243808
+cuda_v0,100,2300, Copy Memory H->D, 2.05808
+cuda_v0,100,2300, Avg. per Kernel, 6.39582
+cuda_v0,100,2300, Copy Memory D->H, 1.80765
+cuda_v0,100,2300, Alloc Vectors, 0.266624
+cuda_v0,100,2300, Copy Memory H->D, 1.9904
+cuda_v0,100,2300, Avg. per Kernel, 5.74242
+cuda_v0,100,2300, Copy Memory D->H, 1.75498
+cuda_v1,100,2300, Alloc Vectors, 0.194048
+cuda_v1,100,2300, Copy Memory H->D, 1.9505
+cuda_v1,100,2300, Avg. per Kernel, 9.10213
+cuda_v1,100,2300, Copy Memory D->H, 1.77222
+cuda_v1,100,2300, Alloc Vectors, 0.321664
+cuda_v1,100,2300, Copy Memory H->D, 2.10886
+cuda_v1,100,2300, Avg. per Kernel, 8.75004
+cuda_v1,100,2300, Copy Memory D->H, 1.72557
+cuda_v2,100,2300, Alloc Vectors, 0.248032
+cuda_v2,100,2300, Copy Memory H->D, 1.98701
+cuda_v2,100,2300, Avg. per Kernel, 0.0198701
+cuda_v2,100,2300, Copy Memory D->H, 1.98701
+cuda_v2,100,2300, Alloc Vectors, 0.281824
+cuda_v2,100,2300, Copy Memory H->D, 1.95293
+cuda_v2,100,2300, Avg. per Kernel, 0.0195293
+cuda_v2,100,2300, Copy Memory D->H, 1.95293
+cuda_v0,100,2500, Alloc Vectors, 0.270336
+cuda_v0,100,2500, Copy Memory H->D, 2.33171
+cuda_v0,100,2500, Avg. per Kernel, 7.64414
+cuda_v0,100,2500, Copy Memory D->H, 2.09274
+cuda_v0,100,2500, Alloc Vectors, 0.273824
+cuda_v0,100,2500, Copy Memory H->D, 2.85082
+cuda_v0,100,2500, Avg. per Kernel, 6.75992
+cuda_v0,100,2500, Copy Memory D->H, 2.04323
+cuda_v1,100,2500, Alloc Vectors, 0.224608
+cuda_v1,100,2500, Copy Memory H->D, 2.2719
+cuda_v1,100,2500, Avg. per Kernel, 11.101
+cuda_v1,100,2500, Copy Memory D->H, 2.2201
+cuda_v1,100,2500, Alloc Vectors, 0.350848
+cuda_v1,100,2500, Copy Memory H->D, 2.47251
+cuda_v1,100,2500, Avg. per Kernel, 10.4311
+cuda_v1,100,2500, Copy Memory D->H, 2.0208
+cuda_v2,100,2500, Alloc Vectors, 0.185216
+cuda_v2,100,2500, Copy Memory H->D, 2.27952
+cuda_v2,100,2500, Avg. per Kernel, 0.0227952
+cuda_v2,100,2500, Copy Memory D->H, 2.27952
+cuda_v2,100,2500, Alloc Vectors, 0.27344
+cuda_v2,100,2500, Copy Memory H->D, 2.56083
+cuda_v2,100,2500, Avg. per Kernel, 0.0256083
+cuda_v2,100,2500, Copy Memory D->H, 2.56083
+cuda_v0,100,2700, Alloc Vectors, 0.253952
+cuda_v0,100,2700, Copy Memory H->D, 2.84317
+cuda_v0,100,2700, Avg. per Kernel, 8.47254
+cuda_v0,100,2700, Copy Memory D->H, 2.40816
+cuda_v0,100,2700, Alloc Vectors, 0.458016
+cuda_v0,100,2700, Copy Memory H->D, 2.99635
+cuda_v0,100,2700, Avg. per Kernel, 7.92492
+cuda_v0,100,2700, Copy Memory D->H, 2.39632
+cuda_v1,100,2700, Alloc Vectors, 0.262528
+cuda_v1,100,2700, Copy Memory H->D, 2.7311
+cuda_v1,100,2700, Avg. per Kernel, 13.0265
+cuda_v1,100,2700, Copy Memory D->H, 2.36173
+cuda_v1,100,2700, Alloc Vectors, 0.307296
+cuda_v1,100,2700, Copy Memory H->D, 3.17517
+cuda_v1,100,2700, Avg. per Kernel, 12.1399
+cuda_v1,100,2700, Copy Memory D->H, 2.4063
+cuda_v2,100,2700, Alloc Vectors, 0.25616
+cuda_v2,100,2700, Copy Memory H->D, 2.67123
+cuda_v2,100,2700, Avg. per Kernel, 0.0267123
+cuda_v2,100,2700, Copy Memory D->H, 2.67123
+cuda_v2,100,2700, Alloc Vectors, 0.26416
+cuda_v2,100,2700, Copy Memory H->D, 2.71286
+cuda_v2,100,2700, Avg. per Kernel, 0.0271286
+cuda_v2,100,2700, Copy Memory D->H, 2.71286
+cuda_v0,100,2900, Alloc Vectors, 0.248576
+cuda_v0,100,2900, Copy Memory H->D, 3.01622
+cuda_v0,100,2900, Avg. per Kernel, 9.38088
+cuda_v0,100,2900, Copy Memory D->H, 2.74413
+cuda_v0,100,2900, Alloc Vectors, 0.49952
+cuda_v0,100,2900, Copy Memory H->D, 3.9985
+cuda_v0,100,2900, Avg. per Kernel, 8.95002
+cuda_v0,100,2900, Copy Memory D->H, 2.68378
+cuda_v1,100,2900, Alloc Vectors, 0.249792
+cuda_v1,100,2900, Copy Memory H->D, 3.03469
+cuda_v1,100,2900, Avg. per Kernel, 14.9453
+cuda_v1,100,2900, Copy Memory D->H, 2.73392
+cuda_v1,100,2900, Alloc Vectors, 0.444224
+cuda_v1,100,2900, Copy Memory H->D, 4.08925
+cuda_v1,100,2900, Avg. per Kernel, 13.9006
+cuda_v1,100,2900, Copy Memory D->H, 3.41206
+cuda_v2,100,2900, Alloc Vectors, 0.23552
+cuda_v2,100,2900, Copy Memory H->D, 3.08154
+cuda_v2,100,2900, Avg. per Kernel, 0.0308154
+cuda_v2,100,2900, Copy Memory D->H, 3.08154
+cuda_v2,100,2900, Alloc Vectors, 0.242048
+cuda_v2,100,2900, Copy Memory H->D, 2.99434
+cuda_v2,100,2900, Avg. per Kernel, 0.0299434
+cuda_v2,100,2900, Copy Memory D->H, 2.99434
+cuda_v0,100,3100, Alloc Vectors, 0.249184
+cuda_v0,100,3100, Copy Memory H->D, 3.41008
+cuda_v0,100,3100, Avg. per Kernel, 10.8154
+cuda_v0,100,3100, Copy Memory D->H, 3.13638
+cuda_v0,100,3100, Alloc Vectors, 0.27488
+cuda_v0,100,3100, Copy Memory H->D, 3.47091
+cuda_v0,100,3100, Avg. per Kernel, 10.0621
+cuda_v0,100,3100, Copy Memory D->H, 3.6056
+cuda_v1,100,3100, Alloc Vectors, 0.255168
+cuda_v1,100,3100, Copy Memory H->D, 3.44784
+cuda_v1,100,3100, Avg. per Kernel, 16.3857
+cuda_v1,100,3100, Copy Memory D->H, 3.12045
+cuda_v1,100,3100, Alloc Vectors, 0.373344
+cuda_v1,100,3100, Copy Memory H->D, 3.53994
+cuda_v1,100,3100, Avg. per Kernel, 15.8385
+cuda_v1,100,3100, Copy Memory D->H, 3.09728
+cuda_v2,100,3100, Alloc Vectors, 0.270336
+cuda_v2,100,3100, Copy Memory H->D, 3.45238
+cuda_v2,100,3100, Avg. per Kernel, 0.0345238
+cuda_v2,100,3100, Copy Memory D->H, 3.45238
+cuda_v2,100,3100, Alloc Vectors, 0.30432
+cuda_v2,100,3100, Copy Memory H->D, 3.51123
+cuda_v2,100,3100, Avg. per Kernel, 0.0351123
+cuda_v2,100,3100, Copy Memory D->H, 3.51123
+cuda_v0,100,3300, Alloc Vectors, 0.31376
+cuda_v0,100,3300, Copy Memory H->D, 4.08541
+cuda_v0,100,3300, Avg. per Kernel, 11.9745
+cuda_v0,100,3300, Copy Memory D->H, 3.49581
+cuda_v0,100,3300, Alloc Vectors, 0.208864
+cuda_v0,100,3300, Copy Memory H->D, 3.90112
+cuda_v0,100,3300, Avg. per Kernel, 11.4771
+cuda_v0,100,3300, Copy Memory D->H, 3.39024
+cuda_v1,100,3300, Alloc Vectors, 0.227136
+cuda_v1,100,3300, Copy Memory H->D, 3.78198
+cuda_v1,100,3300, Avg. per Kernel, 18.8857
+cuda_v1,100,3300, Copy Memory D->H, 3.59344
+cuda_v1,100,3300, Alloc Vectors, 0.25744
+cuda_v1,100,3300, Copy Memory H->D, 3.8255
+cuda_v1,100,3300, Avg. per Kernel, 18.175
+cuda_v1,100,3300, Copy Memory D->H, 3.44432
+cuda_v2,100,3300, Alloc Vectors, 0.25072
+cuda_v2,100,3300, Copy Memory H->D, 3.8305
+cuda_v2,100,3300, Avg. per Kernel, 0.038305
+cuda_v2,100,3300, Copy Memory D->H, 3.8305
+cuda_v2,100,3300, Alloc Vectors, 0.291616
+cuda_v2,100,3300, Copy Memory H->D, 4.32387
+cuda_v2,100,3300, Avg. per Kernel, 0.0432387
+cuda_v2,100,3300, Copy Memory D->H, 4.32387
+cuda_v0,100,3500, Alloc Vectors, 0.24576
+cuda_v0,100,3500, Copy Memory H->D, 4.32182
+cuda_v0,100,3500, Avg. per Kernel, 13.4516
+cuda_v0,100,3500, Copy Memory D->H, 3.88202
+cuda_v0,100,3500, Alloc Vectors, 0.2632
+cuda_v0,100,3500, Copy Memory H->D, 4.30147
+cuda_v0,100,3500, Avg. per Kernel, 12.8268
+cuda_v0,100,3500, Copy Memory D->H, 3.81014
+cuda_v1,100,3500, Alloc Vectors, 0.272288
+cuda_v1,100,3500, Copy Memory H->D, 4.47155
+cuda_v1,100,3500, Avg. per Kernel, 21.3264
+cuda_v1,100,3500, Copy Memory D->H, 3.94058
+cuda_v1,100,3500, Alloc Vectors, 0.304032
+cuda_v1,100,3500, Copy Memory H->D, 4.42406
+cuda_v1,100,3500, Avg. per Kernel, 20.3796
+cuda_v1,100,3500, Copy Memory D->H, 3.78522
+cuda_v2,100,3500, Alloc Vectors, 0.323936
+cuda_v2,100,3500, Copy Memory H->D, 4.8376
+cuda_v2,100,3500, Avg. per Kernel, 0.048376
+cuda_v2,100,3500, Copy Memory D->H, 4.8376
+cuda_v2,100,3500, Alloc Vectors, 0.276448
+cuda_v2,100,3500, Copy Memory H->D, 4.32822
+cuda_v2,100,3500, Avg. per Kernel, 0.0432822
+cuda_v2,100,3500, Copy Memory D->H, 4.32822
+cuda_v0,100,3700, Alloc Vectors, 0.32208
+cuda_v0,100,3700, Copy Memory H->D, 5.29501
+cuda_v0,100,3700, Avg. per Kernel, 15.0182
+cuda_v0,100,3700, Copy Memory D->H, 4.34499
+cuda_v0,100,3700, Alloc Vectors, 0.356352
+cuda_v0,100,3700, Copy Memory H->D, 4.91776
+cuda_v0,100,3700, Avg. per Kernel, 14.2559
+cuda_v0,100,3700, Copy Memory D->H, 4.27914
+cuda_v1,100,3700, Alloc Vectors, 0.237568
+cuda_v1,100,3700, Copy Memory H->D, 5.12643
+cuda_v1,100,3700, Avg. per Kernel, 23.5355
+cuda_v1,100,3700, Copy Memory D->H, 4.33744
+cuda_v1,100,3700, Alloc Vectors, 0.265152
+cuda_v1,100,3700, Copy Memory H->D, 4.80768
+cuda_v1,100,3700, Avg. per Kernel, 22.6709
+cuda_v1,100,3700, Copy Memory D->H, 4.25757
+cuda_v2,100,3700, Alloc Vectors, 0.244512
+cuda_v2,100,3700, Copy Memory H->D, 4.79664
+cuda_v2,100,3700, Avg. per Kernel, 0.0479664
+cuda_v2,100,3700, Copy Memory D->H, 4.79664
+cuda_v2,100,3700, Alloc Vectors, 0.306976
+cuda_v2,100,3700, Copy Memory H->D, 5.38573
+cuda_v2,100,3700, Avg. per Kernel, 0.0538573
+cuda_v2,100,3700, Copy Memory D->H, 5.38573
+cuda_v0,100,3900, Alloc Vectors, 0.271104
+cuda_v0,100,3900, Copy Memory H->D, 5.72243
+cuda_v0,100,3900, Avg. per Kernel, 16.3928
+cuda_v0,100,3900, Copy Memory D->H, 5.59242
+cuda_v0,100,3900, Alloc Vectors, 0.283808
+cuda_v0,100,3900, Copy Memory H->D, 5.35245
+cuda_v0,100,3900, Avg. per Kernel, 15.7048
+cuda_v0,100,3900, Copy Memory D->H, 4.73549
+cuda_v1,100,3900, Alloc Vectors, 0.243488
+cuda_v1,100,3900, Copy Memory H->D, 5.27322
+cuda_v1,100,3900, Avg. per Kernel, 25.6517
+cuda_v1,100,3900, Copy Memory D->H, 4.87978
+cuda_v1,100,3900, Alloc Vectors, 0.279936
+cuda_v1,100,3900, Copy Memory H->D, 5.31222
+cuda_v1,100,3900, Avg. per Kernel, 25.1097
+cuda_v1,100,3900, Copy Memory D->H, 4.6753
+cuda_v2,100,3900, Alloc Vectors, 0.237728
+cuda_v2,100,3900, Copy Memory H->D, 6.84637
+cuda_v2,100,3900, Avg. per Kernel, 0.0684637
+cuda_v2,100,3900, Copy Memory D->H, 6.84637
+cuda_v2,100,3900, Alloc Vectors, 0.275072
+cuda_v2,100,3900, Copy Memory H->D, 5.39053
+cuda_v2,100,3900, Avg. per Kernel, 2.55207
+cuda_v2,100,3900, Copy Memory D->H, 4.60304

@@ -14,14 +14,6 @@
 #define for_yx for_y for_x
 
 
-#ifndef Height
-#define Height (1<< 10)
-#endif
-
-#ifndef Width
-#define Width  (1<< 10)
-#endif
-
 #ifndef THREADS_Y
 #define THREADS_Y (32)
 #endif

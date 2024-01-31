@@ -117,6 +117,7 @@ void game(void *univ,const int NumGenerations)
 	srand(777);
 	const int h = Height;
 	const int w = Width;
+	printf("Running with size = %d x %d\n", h, w);
 	int Generation = NumGenerations;
 	struct timeval begin, end; 
 	u_char (*univ2D)[Width] = (u_char (*)[Width]) univ;

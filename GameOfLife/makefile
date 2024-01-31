@@ -32,71 +32,75 @@ out_guard=@mkdir -p $(OUTPUT_DIR)
 
 # COMPILING PARAMETERS
 ifdef SIZE
-	OPT_FLAGS +="-DWidth=$(SIZE) -DHeight=$(SIZE)"
+	OPT_FLAGS +=-DWidth=$(SIZE) -DHeight=$(SIZE)
 endif
 
 ifdef BLOCK_SIZE
-	OPT_FLAGS +="-DBLOCK_SIZE=$(BLOCK_SIZE)"
+	OPT_FLAGS +=-DBLOCK_SIZE=$(BLOCK_SIZE)
 endif
 
 ifdef NUM_STREAMS
-	OPT_FLAGS +="-DNUM_STREAMS=$(NUM_STREAMS)"
+	OPT_FLAGS +=-DNUM_STREAMS=$(NUM_STREAMS)
 endif
 
 
 .PHONY: all
 all: serial openMP cuda_v0 cuda_v1 cuda_v2
+
+.PHONY: run_gpu
+run_gpu: cuda_v0_run cuda_v1_run cuda_v2_run
+
 .PHONY: run_all
-run_all: serial_run openMP_run cuda_v0_run cuda_v1_run cuda_v2_run
+run_all: serial_run openMP_run run_gpu
 
 .PHONY: serial
 serial: 
 	$(bin_guard)
-	$(CC) $(CXX_FLAGS) -I $(INCLUDE_DIR) $(OPT_FLAGS) $(SERIAL)/$(PROJECT).c -o $(BINARY_DIR)/$(SERIAL).out
+	$(CC) $(CXX_FLAGS) $(OPT_FLAGS) -I $(INCLUDE_DIR)  $(SERIAL)/$(PROJECT).c -o $(BINARY_DIR)/$(SERIAL).out
 
 .PHONY: openMP
 openMP: 
 	$(bin_guard)
-	$(CC) $(CXX_VECTORIZATION) -I $(INCLUDE_DIR) $(OPT_FLAGS) $(OPENMP)/$(PROJECT).c -o $(BINARY_DIR)/$(OPENMP).out
+	$(CC) $(CXX_VECTORIZATION) $(OPT_FLAGS) -I $(INCLUDE_DIR) $(OPENMP)/$(PROJECT).c -o $(BINARY_DIR)/$(OPENMP).out
 
 .PHONY: cuda_v0
 cuda_v0: 
 	$(bin_guard)
-	$(NVCC) $(NVXX_FLAGS) -I $(INCLUDE_DIR) $(OPT_FLAGS) $@/$(PROJECT).cu -o $(BINARY_DIR)/$@.out
+	$(NVCC) $(NVXX_FLAGS) $(OPT_FLAGS) -I $(INCLUDE_DIR) $@/$(PROJECT).cu -o $(BINARY_DIR)/$@.out
 
 .PHONY: cuda_v1
 cuda_v1: 
 	$(bin_guard)
-	$(NVCC) $(NVXX_FLAGS) -I $(INCLUDE_DIR) $(OPT_FLAGS) $@/$(PROJECT).cu -o $(BINARY_DIR)/$@.out
+	$(NVCC) $(NVXX_FLAGS) $(OPT_FLAGS) -I $(INCLUDE_DIR) $@/$(PROJECT).cu -o $(BINARY_DIR)/$@.out
 
 .PHONY: cuda_v2
 cuda_v2: 
 	$(bin_guard)
-	$(NVCC) $(NVXX_FLAGS) -I $(INCLUDE_DIR) $(OPT_FLAGS) $@/$(PROJECT).cu -o $(BINARY_DIR)/$@.out
+	$(NVCC) $(NVXX_FLAGS) $(OPT_FLAGS) -I $(INCLUDE_DIR) $@/$(PROJECT).cu -o $(BINARY_DIR)/$@.out
 
 
-serial_run: serial 
+serial_run: 
 	$(out_guard)
 	./$(BINARY_DIR)/$(SERIAL).out $(ARGS) 
 
-openMP_run: openMP 
+openMP_run: 
 	$(out_guard)
 	./$(BINARY_DIR)/$(OPENMP).out $(ARGS) 
 
-cuda_v0_run: cuda_v0
+cuda_v0_run: 
 	$(out_guard)
-	./$(BINARY_DIR)/$<.out $(ARGS)
-	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-$< ./$(BINARY_DIR)/$<.out $(ARGS) > /dev/null
+	./$(BINARY_DIR)/cuda_v0.out $(ARGS)
+	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-cuda_v0 ./$(BINARY_DIR)/cuda_v0.out $(ARGS) > /dev/null
 
-cuda_v1_run: cuda_v1
+cuda_v1_run: 
 	$(out_guard)
-	./$(BINARY_DIR)/$<.out $(ARGS)
-	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-$< ./$(BINARY_DIR)/$<.out $(ARGS) > /dev/null
+	./$(BINARY_DIR)/cuda_v1.out $(ARGS)
+	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-cuda_v1 ./$(BINARY_DIR)/cuda_v1.out $(ARGS) > /dev/null
 
-cuda_v2_run: cuda_v2
+cuda_v2_run: 
 	$(out_guard)
-	./$(BINARY_DIR)/$<.out $(ARGS)
-	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-$< ./$(BINARY_DIR)/$<.out $(ARGS) > /dev/null
+	./$(BINARY_DIR)/cuda_v2.out $(ARGS)
+	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-cuda_v2 ./$(BINARY_DIR)/cuda_v2.out $(ARGS) > /dev/null
 
 
 

@@ -93,6 +93,7 @@ void GameOfLifeKernel(u_char *Universe, const int NumberOfGenerations)
 	general_timer.stop("Alloc Vectors");
 	
 	general_timer.start();
+	
 	comp_timer.start();
 	cudaMemcpy(UniverseGPU, Universe, kBinSize, cudaMemcpyHostToDevice);
 	general_timer.stop("Copy Memory H->D");
