@@ -19,11 +19,17 @@
 #define Thread_y (32)
 #endif
 
-#define BLOCK_SIZE 32
+#define BLOCK_SIZE (32)
 
 #ifndef num_threads
 #define num_threads (Thread_x * Thread_y)
 #endif
+
+#define EPSILON (0.05f)
+
+
+#define float_equal(x, y) (fabs((x) - (y)) < EPSILON ? 1: 0)
+                            //(fabs((x) - (y)) <= EPSILON ? 1 : 0 )
 
 
 // DATA TYPE DEFINITION
@@ -53,7 +59,8 @@
 // Setting two cases: transposed and non-transposed ?
 // TODO: Is there a way to use for both cases  -> taking into consideration performance..
 #define idx_matrix(ld, i, j) (((j) * (ld)) + (i))
-#define idx_matrix_trp(i, j, ld, transposed) ((transposed) ? ((j) * (ld) + (i)) : ((i) * (ld) + (j)))
+#define idx_matrix_t(ld, i, j) (((i) * (ld)) + (j))
+
 
 // PADDING CONFIGURATION -> check for GPU
 #if defined(PAD_LD)
@@ -88,27 +95,67 @@ inline void check_last_error ()
 inline uint64_t sdiv (uint64_t a, uint64_t b){return (a+b-1)/b;}
 
 
-typedef enum OffloadSelect
+/* enum that deals with offload  type*/
+typedef enum offload_t
 {
-    CPU,
-    GPU_01,
-    GPU_02
-}OffloadSelect;
+    cpu,
+    gpu_easy,
+    gpu_hard
+}offload_t;
+
+/*Enum to deal with modifications between Host <-> Device*/
+typedef enum ChangeHandler{
+    Equal, 
+    ChangeOnHost,
+    ChangeOnDevice
+}ChangeHandler;
 
 
+class TimerCPU{
+private:
+    float time;
+    long ying, yang;
+
+public:
+    TimerCPU(): time(0){ } 
+    ~TimerCPU(){ }
+
+    void start(){
+        struct timeval tm;
+        if(gettimeofday( &time, 0 )) exit(-1);
+        ying = 1000000 * time.tv_sec + time.tv_usec;
+    } 
+        
+    float stop ( std::string label, bool output=false ){
+        struct timeval time;
+        if(gettimeofday( &time, 0 )) exit(-1);
+        yang = 1000000 * time.tv_sec + time.tv_usec;
+        float time = (yang - ying) / 1000.0;
+        if(output)
+            std::cout << "TIME(CPU): " <<
+            time << " ms (" << label << ")" << std::endl;
+
+        return time;
+    } 
+
+
+};
+
+
+//#TODO: include flags to (not) compile this class
 // GPU TIMER
-class Timer {
+class TimerGPU {
     float time;
     const uint64_t gpu;
     cudaEvent_t ying, yang;
 public:
-    Timer (uint64_t gpu=0) : gpu(gpu) {
+    TimerGPU (uint64_t gpu=0) : gpu(gpu) {
         cudaSetDevice(gpu);
         cudaEventCreate(&ying);
         cudaEventCreate(&yang);
     }
 
-    ~Timer ( ) {
+    ~TimerGPU ( ) {
         cudaSetDevice(gpu);
         cudaEventDestroy(ying);
         cudaEventDestroy(yang);
@@ -117,12 +164,16 @@ public:
         cudaSetDevice(gpu);
         cudaEventRecord(ying, 0);
     }
-    void stop (std::string label) {
+    float stop ( std::string label, bool output=false ) {
         cudaSetDevice(gpu);
         cudaEventRecord(yang, 0);
         cudaEventSynchronize(yang);
         cudaEventElapsedTime(&time, ying, yang);
-        std::cout << "TIMING: " << time << " ms (" << label << ")" << std::endl;
+        if(output) 
+            std::cout << "TIME(GPU): " << 
+            time << " ms (" << label << ")" << std::endl;
+
+        return time;
     }
 };
 

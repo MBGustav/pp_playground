@@ -17,7 +17,15 @@ Realizes an Matrix Multiplication:
 */ 
 namespace gpuLinalg{
     void MatMul(cudaMatrix &A, cudaMatrix &B, cudaMatrix &C,data_t alpha, data_t beta);
+    void MatMulOnCPU(cudaMatrix &A, cudaMatrix &B, cudaMatrix &C,data_t alpha, data_t beta);
     
+    /* B = scalar * A*/
+    void scalarMult(cudaMatrix &A, cudaMatrix &B, data_t scalar);
+    void MatAdd(cudaMatrix &A, cudaMatrix &B, cudaMatrix &C);
+    bool EqualMatrices(cudaMatrix &A, cudaMatrix &B);
+    
+    // viability offload checkers
+    offload_t matmul_offload(int A_size, int B_size);
 }
 
 
