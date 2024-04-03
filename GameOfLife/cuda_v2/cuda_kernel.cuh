@@ -145,12 +145,12 @@ void GameOfLifeKernel(u_char *Universe,const int NumberOfGenerations)
 			(UniverseGPU + lower, NewUniverseGPU + lower);
 
 			// Ultima Geracao Copiamos para o Host
-			if(Generation == NumberOfGenerations - 1)
-				cudaMemcpyAsync(Universe    + lower,   // ptr. para cpu
-								UniverseGPU + lower,   // ptr. para gpu
-								sizeof(u_char)*width,  // Tam. dos dados
-								cudaMemcpyDeviceToHost,// Sentido de copia 
-								streams[stream]);	   // qual fila de stream
+			// if(Generation == NumberOfGenerations - 1)
+			// 	cudaMemcpyAsync(Universe    + lower,   // ptr. para cpu
+			// 					UniverseGPU + lower,   // ptr. para gpu
+			// 					sizeof(u_char)*width,  // Tam. dos dados
+			// 					cudaMemcpyDeviceToHost,// Sentido de copia 
+			// 					streams[stream]);	   // qual fila de stream
 			
 		}
 		// Sincronizamos os Streams (eles sao assincronos!)

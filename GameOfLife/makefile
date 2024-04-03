@@ -90,16 +90,20 @@ openMP_run:
 cuda_v0_run: 
 	$(out_guard)
 	./$(BINARY_DIR)/cuda_v0.out $(ARGS)
-	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-cuda_v0 ./$(BINARY_DIR)/cuda_v0.out $(ARGS) > /dev/null
+
 
 cuda_v1_run: 
 	$(out_guard)
 	./$(BINARY_DIR)/cuda_v1.out $(ARGS)
-	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-cuda_v1 ./$(BINARY_DIR)/cuda_v1.out $(ARGS) > /dev/null
+
 
 cuda_v2_run: 
 	$(out_guard)
 	./$(BINARY_DIR)/cuda_v2.out $(ARGS)
+
+profiles_nsys:
+	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-cuda_v0 ./$(BINARY_DIR)/cuda_v0.out $(ARGS) > /dev/null
+	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-cuda_v1 ./$(BINARY_DIR)/cuda_v1.out $(ARGS) > /dev/null
 	$(NSYS) $(NSYS_FLAGS) -o $(OUTPUT_DIR)/report-cuda_v2 ./$(BINARY_DIR)/cuda_v2.out $(ARGS) > /dev/null
 
 

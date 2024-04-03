@@ -14,6 +14,15 @@
 #define for_yx for_y for_x
 
 
+#ifndef Height
+#define Height (1<< 10)
+#endif
+
+#ifndef Width
+#define Width  (1<< 10)
+#endif
+
+
 #ifndef THREADS_Y
 #define THREADS_Y (32)
 #endif
@@ -85,13 +94,8 @@ void evolve_serial2D(void *universe, int w, int h)
 	for_yx {
 		u_char n = univ[(y-1+h)%h][(x-1+w)%w] + univ[(y-1+h)%h][(x  +w)%w] + univ[(y-1+h)%h][(x+1+w)%w] +
 		           univ[(y  +h)%h][(x-1+w)%w] +                              univ[(y  +h)%h][(x+1+w)%w] +
-		           univ[(y+1+h)%h][(x-1+w)%w] + univ[(y+1+h)%h][(x  +w)%w] + univ[(y+1+h)%h][(x+1+w)%w]; 
-		if(n < 2 || n > 3)
-			new_univ[y][x] = 0;
-		if(n == 3)
-			new_univ[y][x] = 1;
-		if(n == 2)
-			new_univ[y][x] = univ[y][x];
+		           univ[(y+1+h)%h][(x-1+w)%w] + univ[(y+1+h)%h][(x  +w)%w] + univ[(y+1+h)%h][(x+1+w)%w]; 	
+		new_univ[y][x] = (n == 3 || (n == 2 && univ[y][x]));
 	}
 	for_yx univ[y][x] = new_univ[y][x];
 	// swap_pointers((void**)& univ,(void**)& new_univ);

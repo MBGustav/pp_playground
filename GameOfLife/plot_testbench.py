@@ -45,9 +45,6 @@ def print_graphic(file_name):
     # data = data.query('size > 0 and size < 1600')
     grp = data.groupby(['type','function','size', 'NumberOfGenerations'])
     grp = grp.agg({'time_ms': ['mean', 'std', 'min', 'max']})
-    print(grp)
-    # return
-
 
     plt.figure(figsize=(10, 6))
 
@@ -57,9 +54,9 @@ def print_graphic(file_name):
                      label=func, 
                     linestyle='-', capsize=5, capthick=2)
 
-    plt.xlabel('Size of Matrices')
-    plt.ylabel('Execution Time (us)')
-    plt.title('Comparison of Execution Time for Different Matrix Sizes')
+    plt.xlabel('tamanho da Janela')
+    plt.ylabel('Execution Time (ms)')
+    plt.title('Comparação por tamanho de Janela ')
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
